@@ -11,7 +11,7 @@ body {
     overflow-x: hidden;
 
     a {
-        color: $light;
+        color: $primary;
         text-decoration: none;
         transition: $transition-base;
 
@@ -132,6 +132,7 @@ body {
     }
 
     .button-services {
+        color: $light;
         height: 3.188rem;
 
         svg {
@@ -226,6 +227,53 @@ body {
 
         .divider {
             border-right: 2px solid rgb($light-dark, 0.75);
+        }
+    }
+}
+
+.album {
+    background-color: transparent;
+}
+
+.location {
+    background-color: $dark;
+}
+
+.footer {
+    height: 23.438rem;
+
+    .container {
+        height: 100%;
+    }
+
+    .logo {
+        height: 2.813rem;
+    }
+
+    .footer-menu {
+        .nav-link {
+            color: $light;
+            transition: $transition-base;
+
+            &:hover {
+                padding-left: $spacer * 1.5;
+                color: $light;
+            }
+        }
+    }
+
+    .footer-socials {
+        .nav-link {
+            background-image: url(./../../assets/img/socials-link-bg.svg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2.25rem;
+            height: 2.25rem;
+            margin: .25rem;
         }
     }
 }

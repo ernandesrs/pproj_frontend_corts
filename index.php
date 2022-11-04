@@ -176,10 +176,12 @@
                                 <span class="text-primary">descontos exclusivos</span>!
                             </p>
                             <div class="d-flex flex-column">
-                                <a class="btn btn-primary mb-2" href="client.php?action=login">
+                                <a class="btn btn-primary mb-2"
+                                    href="client.php?action=login">
                                     Fazer login
                                 </a>
-                                <a class="btn btn-outline-primary" href="client.php?action=register">
+                                <a class="btn btn-outline-primary"
+                                    href="client.php?action=register">
                                     Iniciar um cadastrado grátis
                                 </a>
                             </div>
@@ -251,6 +253,114 @@
             </div>
         </div>
     </section>
+
+    <section class="section album">
+        <div class="container"></div>
+    </section>
+
+    <section class="section location">
+        <div class="container"></div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="d-flex flex-column h-100">
+                <div class="row py-5">
+                    <div class="col-12 col-md-5 mb-5 mb-md-0">
+                        <img class="logo" src="./assets/img/logo.svg" alt="Corts">
+                        <div class="pt-4 nav footer-socials">
+                            <?php
+                            $socials = [
+                                [
+                                    "icon" => "facebook",
+                                    "name" => "Facebook",
+                                    "url" => "",
+                                ],
+                                [
+                                    "icon" => "instagram",
+                                    "name" => "Instagram",
+                                    "url" => "",
+                                ],
+                                [
+                                    "icon" => "twitter",
+                                    "name" => "Twitter",
+                                    "url" => "",
+                                ],
+                                [
+                                    "icon" => "youtube",
+                                    "name" => "Youtube",
+                                    "url" => "",
+                                ],
+                                [
+                                    "icon" => "tiktok",
+                                    "name" => "TikTok",
+                                    "url" => "",
+                                ],
+                            ];
+                            foreach ($socials as $social):
+                            ?>
+                            <a class="nav-link" href="<?= $social["url"] ?>"
+                                title="<?= $social["name"] ?>" target="_blank">
+                                <img src="./assets/img/icons/<?= $social["icon"] ?>.svg"
+                                    alt="<?= $social["name"] ?>">
+                            </a>
+                            <?php
+                            endforeach;
+                            ?>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-3 mb-4 mb-sm-0">
+                        <h4>MENU</h4>
+                        <nav class="nav flex-column footer-menu">
+                            <a href="" class="nav-link">
+                                Início
+                            </a>
+                            <a href="" class="nav-link">
+                                Cortes e preços
+                            </a>
+                            <a href="" class="nav-link">
+                                Área do cliente
+                            </a>
+                            <a href="" class="nav-link">
+                                Agendar atendimento
+                            </a>
+                        </nav>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <h4>ENCONTRE-NOS</h4>
+                        <nav class="nav flex-column">
+                            <a class="nav-link disabled" href="">
+                                Rua Lorem Ipsum Dolor, 2246<br>
+                                Loremdolor, LD
+                            </a>
+                            <a class="nav-link text-muted" href="tel:+55 67 90000-0000">
+                                +55 67 90000-0000
+                            </a>
+                            <a class="nav-link text-muted"
+                                href="mailto:atendimento@corts.com">
+                                atendimento@corts.com
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="text-center mt-auto pb-3">
+                    <small>
+                        <p class="mb-0">
+                            Todos os direitos reservados
+                        </p>
+                        <p class="mb-0">
+                            <a href="">
+                                Termos de privacidade
+                            </a>
+                        </p>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="./assets/js/scripts.min.js"></script>
 </body>

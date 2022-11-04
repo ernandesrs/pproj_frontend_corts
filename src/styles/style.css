@@ -10634,7 +10634,7 @@ body {
   overflow-x: hidden;
 }
 body a {
-  color: #EBEBEB;
+  color: #A78B28;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
 }
@@ -10731,6 +10731,7 @@ body .btn-outline-primary-dark:hover {
   height: calc(100vh - 12.563rem);
 }
 .feature .button-services {
+  color: #EBEBEB;
   height: 3.188rem;
 }
 .feature .button-services svg {
@@ -10807,6 +10808,44 @@ body .btn-outline-primary-dark:hover {
 }
 .schedule .floating-card .divider {
   border-right: 2px solid rgba(189, 189, 189, 0.75);
+}
+
+.album {
+  background-color: transparent;
+}
+
+.location {
+  background-color: #222222;
+}
+
+.footer {
+  height: 23.438rem;
+}
+.footer .container {
+  height: 100%;
+}
+.footer .logo {
+  height: 2.813rem;
+}
+.footer .footer-menu .nav-link {
+  color: #EBEBEB;
+  transition: all 0.2s ease-in-out;
+}
+.footer .footer-menu .nav-link:hover {
+  padding-left: 1.5rem;
+  color: #EBEBEB;
+}
+.footer .footer-socials .nav-link {
+  background-image: url(./../../assets/img/socials-link-bg.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0.25rem;
 }
 
 @media (min-width: 992px) {
