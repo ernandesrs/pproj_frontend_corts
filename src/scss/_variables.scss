@@ -1,0 +1,30 @@
+$header-height: 9.375rem; // 150px
+
+$primary: #A78B28;
+$primary-dark: #9C7F15;
+
+$dark: #222222;
+$dark-dark: #131313;
+
+$light: #EBEBEB;
+$light-dark: #BDBDBD;
+
+$theme-colors: (
+    "primary": $primary,
+    "primary-dark": $primary-dark,
+
+    "dark": $dark,
+    "dark-dark": $dark-dark,
+
+    "light": $light,
+    "light-dark": $light-dark
+);
+
+// scss-docs-start border-radius-variables
+$border-radius-sm: .0725rem !default; //.25rem
+$border-radius: .125rem !default; //.375rem
+$border-radius-lg: .5rem !default; // .5rem
+$border-radius-xl: 1rem !default; //1rem
+$border-radius-2xl: 2rem !default; //2rem
+$border-radius-pill: 50rem !default; //50rem
+// scss-docs-end border-radius-variables

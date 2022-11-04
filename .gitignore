@@ -1,0 +1,5 @@
+node_modules
+public/assets/css/*.css.map
+vendor
+.env
+package-lock.json
