@@ -18,36 +18,43 @@
 
     <header class="header">
         <div class="container">
-            <div class="d-flex align-items-center">
-                <a href="<?= URL_BASE ?>">
-                    <img src="./assets/img/logo.svg" alt="Corts">
-                </a>
+            <div class="c-header">
+                <div class="c-header-leftside">
+                    <a class="logo" href="<?= URL_BASE ?>">
+                        <img src="./assets/img/logo.svg" alt="Corts">
+                    </a>
+                </div>
 
-                <div class="ms-auto">
-                    <nav>
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a href="http://localhost/cortsfront" class="nav-link">
-                                    Início
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#services" class="nav-link">
-                                    Cortes e preços
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="client.php?action=login" class="nav-link">
-                                    Área do cliente
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#schedule" class="btn btn-primary">
-                                    Agendar atendimento
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                <div class="c-header-rightside">
+                    <button class="c-header-toggler">
+                        <span class="c-header-toggler-open">
+                            &equiv;
+                        </span>
+                        <span class="c-header-toggler-close">
+                            &times;
+                        </span>
+                    </button>
+
+                    <div class="c-header-content">
+                        <nav class="nav c-header-nav">
+                            <a class="c-header-nav-link"
+                                href="http://localhost/cortsfront">
+                                Início
+                            </a>
+                            <a class="c-header-nav-link" href="#services">
+                                Cortes e preços
+                            </a>
+                            <a class="c-header-nav-link" href="client.php?action=login">
+                                Área do cliente
+                            </a>
+                        </nav>
+
+                        <div class="c-header-account">
+                            <a href="#schedule" class="btn btn-primary">
+                                Agendar atendimento
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -551,10 +558,7 @@
                 }
             }
         });
-
-        galery.mount(window.splide.Extensions);
     </script>
-
 </body>
 
 </html>

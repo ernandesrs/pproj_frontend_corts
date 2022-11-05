@@ -1,0 +1,186 @@
+$header-height: 150px;
+
+$header-mobile-background: $dark-dark;
+$header-mobile-width: 275px;
+
+.c-header {
+    display: flex;
+    align-items: center;
+    height: $header-height;
+
+    .c-header-leftside {
+        background-color: transparent;
+    }
+
+    .c-header-rightside {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-left: auto;
+        position: relative;
+        z-index: 900;
+
+        .c-header-toggler {
+            background: transparent;
+            height: $header-height;
+            font-size: 2.5rem;
+            color: $light;
+            border: 0;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+
+            .c-header-toggler-close {
+                display: none;
+            }
+
+            &.active {
+                .c-header-toggler-close {
+                    display: block;
+                }
+
+                .c-header-toggler-open {
+                    display: none;
+                }
+            }
+
+            span,
+            i {
+                pointer-events: none;
+            }
+        }
+
+        .c-header-content {
+            display: flex;
+            flex-direction: column;
+            background-color: $header-mobile-background;
+            width: 100%;
+            max-width: $header-mobile-width;
+            height: calc(100vh - $header-height);
+            padding: 12px;
+            position: fixed;
+            top: $header-height;
+            right: 0;
+            transform: translateX(100%);
+            transition-duration: .125s;
+            transition-timing-function: ease-in-out;
+
+            .c-header-nav {
+                display: flex;
+                flex-direction: column;
+
+                .c-header-nav-link {
+                    display: block;
+                    background-color: transparent;
+                    padding: 15px 12px;
+                    color: $light;
+                    transform: translateX(50%);
+                    transition-duration: .375s;
+                    transition-timing-function: ease-in-out;
+                    opacity: 0;
+
+                    &:hover {
+                        padding-left: 16px;
+                        transition-duration: .25s;
+                    }
+                }
+            }
+
+            .c-header-account {
+                display: flex;
+                justify-content: center;
+                margin-top: auto;
+
+                a {
+                    padding: 10px 20px;
+                    margin: 0 2px;
+                    border-radius: 4px;
+                    border: 1px solid transparent;
+                    color: $light;
+                    transition-duration: .5s;
+
+                    &:hover {
+                        transition-duration: .5s;
+                    }
+
+                    &:nth-child(1) {
+                        background-color: transparent;
+                        border-color: $primary;
+
+                        &:hover {
+                            background-color: rgb($primary, .75);
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        background-color: $primary;
+                        border-color: $primary;
+
+                        &:hover {
+                            background-color: rgba($primary, .75);
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                transform: translateX(0%);
+                transition-duration: .25s;
+                transition-timing-function: ease-in;
+
+                .c-header-nav {
+                    .c-header-nav-link {
+                        transform: translateX(0%);
+                        transition-timing-function: ease-in-out;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .c-header {
+        .c-header-rightside {
+            .c-header-toggler {
+                display: none;
+            }
+
+            .c-header-content {
+                display: flex;
+                flex-direction: row;
+                background-color: transparent;
+                max-width: unset;
+                height: unset;
+                top: unset;
+                position: relative;
+                padding: 0;
+                right: 0;
+                transform: unset;
+
+                .c-header-nav {
+                    flex-direction: row;
+                    align-items: center;
+                    margin-left: auto;
+
+                    .c-header-nav-link {
+                        transform: unset;
+                        opacity: unset;
+
+                        &:hover {
+                            padding-left: 12px;
+                            opacity: .75;
+                        }
+                    }
+                }
+
+                .c-header-account {
+                    align-items: center;
+                    margin-top: unset;
+                }
+            }
+        }
+    }
+}
