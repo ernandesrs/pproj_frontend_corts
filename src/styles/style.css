@@ -10802,15 +10802,15 @@ body .h4 {
 }
 body h1,
 body .h1 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 body h2,
 body .h2 {
-  font-size: 2rem;
+  font-size: 1.35rem;
 }
 body h3,
 body .h3 {
-  font-size: 1.5rem;
+  font-size: 1.15rem;
 }
 body h4,
 body .h4 {
@@ -10902,7 +10902,7 @@ body .btn-outline-primary-dark:hover {
   display: flex;
   align-items: center;
   min-height: 100vh;
-  padding: 5rem;
+  padding: 5rem 0;
 }
 .section .container {
   position: relative;
@@ -11014,16 +11014,52 @@ body .btn-outline-primary-dark:hover {
 }
 
 @media (min-width: 576px) {
+  body h1,
+body .h1 {
+    font-size: 1.75rem;
+  }
+  body h2,
+body .h2 {
+    font-size: 1.55rem;
+  }
+  body h3,
+body .h3 {
+    font-size: 1.35rem;
+  }
   .feature .feature-title {
     font-size: 1.75rem;
   }
 }
 @media (min-width: 768px) {
+  body h1,
+body .h1 {
+    font-size: 2rem;
+  }
+  body h2,
+body .h2 {
+    font-size: 1.75rem;
+  }
+  body h3,
+body .h3 {
+    font-size: 1.45rem;
+  }
   .feature .feature-title {
     font-size: 2.25rem;
   }
 }
 @media (min-width: 992px) {
+  body h1,
+body .h1 {
+    font-size: 2.5rem;
+  }
+  body h2,
+body .h2 {
+    font-size: 2rem;
+  }
+  body h3,
+body .h3 {
+    font-size: 1.5rem;
+  }
   .header .logo img {
     height: unset;
   }
