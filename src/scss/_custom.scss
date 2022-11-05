@@ -102,6 +102,12 @@ body {
     width: 100%;
     height: $header-height;
 
+    .logo {
+        img {
+            height: 46px;
+        }
+    }
+
     .nav {
         .nav-item {
             .nav-link {
@@ -123,7 +129,7 @@ body {
 
     .feature-title {
         font-family: 'IM Fell French Canon SC', sans-serif;
-        font-size: 2.813rem;
+        font-size: 1.5rem;
         font-weight: unset;
     }
 

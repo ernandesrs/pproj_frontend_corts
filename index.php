@@ -63,8 +63,8 @@
     <section class="feature">
         <div class="container">
             <div class="feature-inner d-flex flex-column justify-content-center">
-                <div class="row justify-content-start">
-                    <div class="col-12 col-md-8 col-lg-7">
+                <div class="row justify-content-center justify-content-lg-start text-center text-lg-start">
+                    <div class="col-12 col-md-10 col-lg-7">
                         <h1 class="feature-title">
                             Nós surpreendemos você e você surpreende o mundo com <span
                                 class="text-primary">um belo corte de cabelo</span>

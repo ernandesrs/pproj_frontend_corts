@@ -10857,6 +10857,9 @@ body .btn-outline-primary-dark:hover {
   width: 100%;
   height: 150px;
 }
+.header .logo img {
+  height: 46px;
+}
 .header .nav .nav-item .nav-link {
   color: #EBEBEB;
 }
@@ -10872,7 +10875,7 @@ body .btn-outline-primary-dark:hover {
 }
 .feature .feature-title {
   font-family: "IM Fell French Canon SC", sans-serif;
-  font-size: 2.813rem;
+  font-size: 1.5rem;
   font-weight: unset;
 }
 .feature .feature-inner {
@@ -11010,7 +11013,23 @@ body .btn-outline-primary-dark:hover {
   margin: 0.25rem;
 }
 
+@media (min-width: 576px) {
+  .feature .feature-title {
+    font-size: 1.75rem;
+  }
+}
+@media (min-width: 768px) {
+  .feature .feature-title {
+    font-size: 2.25rem;
+  }
+}
 @media (min-width: 992px) {
+  .header .logo img {
+    height: unset;
+  }
+  .feature .feature-title {
+    font-size: 2.75rem;
+  }
   .schedule .floating-card .left-side,
 .schedule .floating-card .right-side {
     width: 50%;
