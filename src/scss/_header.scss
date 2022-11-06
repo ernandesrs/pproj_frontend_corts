@@ -81,6 +81,12 @@ $header-mobile-width: 275px;
                     transition-duration: .375s;
                     transition-timing-function: ease-in-out;
                     opacity: 0;
+                    border-bottom: 3px solid transparent;
+
+                    &:hover,
+                    &.active {
+                        border-color: $primary;
+                    }
 
                     &:hover {
                         padding-left: 16px;
