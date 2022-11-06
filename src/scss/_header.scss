@@ -133,6 +133,7 @@ $header-mobile-width: 275px;
                     flex-direction: row;
                     align-items: center;
                     margin-left: auto;
+                    margin-right: $spacer * 1.5;
 
                     .c-header-nav-link {
                         transform: unset;

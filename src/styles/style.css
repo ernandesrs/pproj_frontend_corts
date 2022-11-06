@@ -10709,6 +10709,7 @@ textarea.form-control-lg {
     flex-direction: row;
     align-items: center;
     margin-left: auto;
+    margin-right: 1.5rem;
   }
   .c-header .c-header-rightside .c-header-content .c-header-nav .c-header-nav-link {
     transform: unset;
