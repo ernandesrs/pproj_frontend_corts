@@ -11202,6 +11202,9 @@ body small,
 body .small {
   font-size: 0.785rem;
 }
+body .text-primary {
+  color: #A78B28 !important;
+}
 body .form-floating label {
   color: rgba(34, 34, 34, 0.75);
 }

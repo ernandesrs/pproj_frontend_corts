@@ -57,6 +57,10 @@ body {
         font-size: .785rem;
     }
 
+    .text-primary {
+        color: $primary!important;
+    }
+
     .form-floating {
         label {
             color: rgb($dark, 0.75);

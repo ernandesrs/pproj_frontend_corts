@@ -174,11 +174,11 @@
                     <div class="d-flex flex-column flex-lg-row py-4">
 
                         <div class="left-side px-4 mb-5 mb-lg-0 order-lg-5">
-                            <h3 class="mb-2">
+                            <h3 class="mb-3">
                                 <span class="text-primary">VANTAGENS</span> de ser um
                                 cliente cadastrado
                             </h3>
-                            <p class="mb-2">
+                            <p class="mb-4">
                                 Clientes cadastrados participam de <span
                                     class="text-primary">sorteios mensais</span> e ganham
                                 <span class="text-primary">descontos exclusivos</span>!
@@ -196,10 +196,10 @@
                         </div>
 
                         <div class="right-side px-4 order-lg-1">
-                            <h3 class="mb-2">
+                            <h3 class="mb-3">
                                 Agendamento rápido
                             </h3>
-                            <p class="mb-2">
+                            <p class="mb-3">
                                 Faça um agendamento rápido conosco
                             </p>
                             <div>
