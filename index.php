@@ -235,6 +235,7 @@ $socials = [
     </section>
 
     <section class="section schedule" id="schedule">
+        <img class="parallax-image" src="./assets/img/section-bg-1.jpg" alt="image">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-12 col-md-10 col-lg-8 floating-card">
@@ -566,8 +567,16 @@ $socials = [
     </div>
     <!-- /modal: photo view -->
 
+    <script src="./assets/js/simple-parallax.min.js"></script>
     <script src="./assets/js/splide.min.js"></script>
     <script src="./assets/js/scripts.min.js"></script>
+    <script>
+        var image = document.getElementsByClassName('parallax-image');
+        new simpleParallax(image, {
+            scale: 1.2,
+            maxTransition: 99
+        });
+    </script>
 
 </body>
 </html>

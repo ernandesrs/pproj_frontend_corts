@@ -34,3 +34,10 @@ $splideJs = new Minify\JS();
 $splideJs->add(__DIR__ . "/../node_modules/@splidejs/splide/dist/js/splide.js");
 $splideJs->add(__DIR__ . "/../node_modules/@splidejs/splide-extension-grid/dist/js/splide-extension-grid.js");
 $splideJs->minify(__DIR__ . "/../assets/js/splide.min.js");
+
+/**
+ * Simple Parallax
+ */
+$simpleParallaxJS = new Minify\JS();
+$simpleParallaxJS->add(__DIR__ . "/../node_modules/simple-parallax-js/dist/simpleParallax.js");
+$simpleParallaxJS->minify(__DIR__ . "/../assets/js/simple-parallax.min.js");
