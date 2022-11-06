@@ -38,6 +38,20 @@ $splideJs->minify(__DIR__ . "/../assets/js/splide.min.js");
 /**
  * Simple Parallax
  */
-$simpleParallaxJS = new Minify\JS();
-$simpleParallaxJS->add(__DIR__ . "/../node_modules/simple-parallax-js/dist/simpleParallax.js");
-$simpleParallaxJS->minify(__DIR__ . "/../assets/js/simple-parallax.min.js");
+$simpleParallaxJs = new Minify\JS();
+$simpleParallaxJs->add(__DIR__ . "/../node_modules/simple-parallax-js/dist/simpleParallax.js");
+$simpleParallaxJs->minify(__DIR__ . "/../assets/js/simple-parallax.min.js");
+
+/**
+ * AOS
+ */
+$aosJs = new Minify\JS();
+$aosJs->add(__DIR__ . "/../node_modules/aos/dist/aos.js");
+$aosJs->minify(__DIR__ . "/../assets/js/aos.min.js");
+
+/**
+ * AOS
+ */
+$aosCss = new Minify\CSS();
+$aosCss->add(__DIR__ . "/../node_modules/aos/dist/aos.css");
+$aosCss->minify(__DIR__ . "/../assets/css/aos.min.css");

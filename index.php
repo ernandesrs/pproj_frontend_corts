@@ -104,6 +104,7 @@ $socials = [
 
     <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/styles.min.css">
+    <link rel="stylesheet" href="./assets/css/aos.min.css">
 </head>
 
 <body>
@@ -155,7 +156,7 @@ $socials = [
             <div class="feature-inner d-flex flex-column justify-content-center">
                 <div
                     class="row justify-content-center justify-content-lg-start text-center text-lg-start">
-                    <div class="col-12 col-md-10 col-lg-7">
+                    <div class="col-12 col-md-10 col-lg-7" data-aos="zoom-in-down">
                         <h1 class="feature-title">
                             Nós surpreendemos você e você surpreende o mundo com <span
                                 class="text-primary">um belo corte de cabelo</span>
@@ -183,16 +184,16 @@ $socials = [
         <div class="container">
             <div class="row justify-content-center pb-4 text-center">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                    <h1>
+                    <h1 data-aos="zoom-in-up">
                         Cortes e Preços
                     </h1>
-                    <p class="h4">
+                    <p class="h4" data-aos="zoom-in-up">
                         Surpreenda-se nossos cortes profissionais e preços baixos
                     </p>
                 </div>
             </div>
 
-            <div class="row justify-content-center pb-4">
+            <div class="row justify-content-center pb-4" data-aos="zoom-out" data-aos-duration="1000">
                 <div class="col-12 col-lg-10">
                     <div class="row justify-content-center services-list">
                         <?php foreach ($services as $key => $service): ?>
@@ -224,10 +225,10 @@ $socials = [
             </div>
 
             <div class="text-center">
-                <a href="" class="btn btn-outline-primary">
+                <a href="" class="btn btn-outline-primary" data-aos="fade-up" data-aos-duration="750">
                     Sou cliente
                 </a>
-                <a href="" class="btn btn-primary">
+                <a href="" class="btn btn-primary" data-aos="fade-up" data-aos-delay="275" data-aos-duration="750">
                     Agendamento horário
                 </a>
             </div>
@@ -336,16 +337,16 @@ $socials = [
         <div class="container">
             <div class="row justify-content-center pb-4 text-center">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                    <h1>
+                    <h1 data-aos="zoom-in-up">
                         Galeria
                     </h1>
-                    <p class="h4">
+                    <p class="h4" data-aos="zoom-in-up">
                         Veja alguns de nossos trabalhos já realizados
                     </p>
                 </div>
             </div>
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-duration="750">
                 <div class="col-12 col-md-10 col-lg-8">
                     <div class="splide" id="photos-galery">
                         <div class="splide__track">
@@ -381,10 +382,10 @@ $socials = [
         <div class="container">
             <div class="row justify-content-center pb-4 text-center">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                    <h1>
+                    <h1 data-aos="zoom-in-up">
                         Onde Estamos?
                     </h1>
-                    <p class="h4">
+                    <p class="h4" data-aos="zoom-in-up" data-aos-delay="275">
                         Encontre-nos por um dos meios abaixo
                     </p>
                 </div>
@@ -395,7 +396,7 @@ $socials = [
                     class="col-12 col-lg-6 col-xl-5 d-flex flex-column align-items-center justify-content-center">
                     <div>
                         <!-- address -->
-                        <div class="d-flex align-items-center mb-3">
+                        <div class="d-flex align-items-center mb-3" data-aos="zoom-in-right">
                             <div class="icon">
                                 <svg width="45" height="45" viewBox="0 0 45 45"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -412,7 +413,7 @@ $socials = [
                         </div>
 
                         <!-- phone number -->
-                        <div class="d-flex align-items-center mb-3">
+                        <div class="d-flex align-items-center mb-3" data-aos="zoom-in-right" data-aos-delay="125">
                             <div class="icon">
                                 <svg width="45" height="45" viewBox="0 0 45 45"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -430,7 +431,7 @@ $socials = [
                         </div>
 
                         <!-- email -->
-                        <div class="d-flex align-items-center mb-3">
+                        <div class="d-flex align-items-center mb-3" data-aos="zoom-in-right" data-aos-delay="200">
                             <div class="icon">
                                 <svg width="45" height="45" viewBox="0 0 45 45"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -445,7 +446,7 @@ $socials = [
                         </div>
 
                         <!-- whatsapp -->
-                        <div class="d-flex align-items-center mb-3">
+                        <div class="d-flex align-items-center mb-3" data-aos="zoom-in-right" data-aos-delay="275">
                             <div class="icon">
                                 <svg width="45" height="45" viewBox="0 0 45 45"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -461,7 +462,7 @@ $socials = [
                     </div>
                 </div>
 
-                <div class="col-12 col-lg-6 col-xl-7 py-3">
+                <div class="col-12 col-lg-6 col-xl-7 py-3" data-aos="zoom-in-left" data-aos-duration="750">
                     <div class="map-area">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!4v1667673971501!6m8!1m7!1sh9fsIkFmlutDRUO13dLp9Q!2m2!1d25.19846403102348!2d55.27243301486146!3f133.59694635865472!4f39.71106924254599!5f0.7820865974627469"
@@ -568,15 +569,9 @@ $socials = [
     <!-- /modal: photo view -->
 
     <script src="./assets/js/simple-parallax.min.js"></script>
+    <script src="./assets/js/aos.min.js"></script>
     <script src="./assets/js/splide.min.js"></script>
     <script src="./assets/js/scripts.min.js"></script>
-    <script>
-        var image = document.getElementsByClassName('parallax-image');
-        new simpleParallax(image, {
-            scale: 1.2,
-            maxTransition: 99
-        });
-    </script>
 
 </body>
 </html>

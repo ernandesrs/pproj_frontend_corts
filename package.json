@@ -2,6 +2,7 @@
   "dependencies": {
     "@splidejs/splide": "4.1.*",
     "@splidejs/splide-extension-grid": "0.4.1",
+    "aos": "^2.3.4",
     "bootstrap": "^5.2.2",
     "simple-parallax-js": "^5.6.2"
   }

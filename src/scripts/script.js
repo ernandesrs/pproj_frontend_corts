@@ -45,6 +45,17 @@ const options = {
 // header
 (new CHeader()).init();
 
+// aos
+AOS.init();
+
+// simple parallax
+var image = document.getElementsByClassName('parallax-image');
+new simpleParallax(image, {
+    scale: 1.2,
+    maxTransition: 99
+});
+
+// photo view modal
 let photoViewModal = document.querySelector("#photo-view");
 if (photoViewModal) {
     let loadingArea = photoViewModal.querySelector(".loading-area");
