@@ -36,6 +36,8 @@ $header-mobile-width: 275px;
             }
 
             &.active {
+                position: fixed;
+
                 .c-header-toggler-close {
                     display: block;
                 }

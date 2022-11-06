@@ -10630,6 +10630,9 @@ textarea.form-control-lg {
 .c-header .c-header-rightside .c-header-toggler .c-header-toggler-close {
   display: none;
 }
+.c-header .c-header-rightside .c-header-toggler.active {
+  position: fixed;
+}
 .c-header .c-header-rightside .c-header-toggler.active .c-header-toggler-close {
   display: block;
 }
