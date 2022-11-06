@@ -1,4 +1,97 @@
-<?php require __DIR__ . "/config.php" ?>
+<?php
+
+require __DIR__ . "/config.php";
+
+$menuHeader = [
+    (object)[
+        "text" => "Início",
+        "url" => URL_BASE,
+        "target" => "_self",
+        "title" => "Página inicial"
+    ],
+    (object)[
+        "text" => "Cortes e preços",
+        "url" => URL_BASE . "#services",
+        "target" => "_self",
+        "title" => "Cortes e preços"
+    ],
+    (object)[
+        "text" => "Área do cliente",
+        "url" => URL_BASE . "?action=login",
+        "target" => "_self",
+        "title" => "Acessar área do cliente"
+    ],
+    (object)[
+        "text" => "Example #1",
+        "url" => "https://google.com.br",
+        "target" => "_blank",
+        "title" => "Acessar Google"
+    ],
+];
+$menuFooter = $menuHeader;
+
+$services = [
+    (object) [
+        "image" => "corte-social",
+        "title" => "Corte Social",
+        "price" => "25",
+        "icon" => "scissor"
+    ],
+    (object) [
+        "image" => "corte-degrade",
+        "title" => "Corte Degradê",
+        "price" => "35",
+        "icon" => "scissor"
+    ],
+    (object) [
+        "image" => "corte-barba",
+        "title" => "Corte Barba",
+        "price" => "50",
+        "icon" => "beard"
+    ],
+];
+
+$photos = [
+    (object) ["name" => "", "url" => "foto-barba.jpg"],
+    (object) ["name" => "", "url" => "foto-items-de-barbearia.jpg"],
+    (object) ["name" => "", "url" => "foto-degrade.jpg"],
+    (object) ["name" => "", "url" => "foto-degrade-2.jpg"],
+    (object) ["name" => "", "url" => "foto-degrade-3.jpg"],
+    (object) ["name" => "", "url" => "foto-social.jpg"],
+    (object) ["name" => "", "url" => "foto-tesouras.jpg"],
+    (object) ["name" => "", "url" => "foto-barbearia-interior.jpg"],
+    (object) ["name" => "", "url" => "foto-barbearia.jpg"],
+];
+
+$socials = [
+    (object) [
+        "icon" => "facebook",
+        "name" => "Facebook",
+        "url" => "",
+    ],
+    (object) [
+        "icon" => "instagram",
+        "name" => "Instagram",
+        "url" => "",
+    ],
+    (object) [
+        "icon" => "twitter",
+        "name" => "Twitter",
+        "url" => "",
+    ],
+    (object) [
+        "icon" => "youtube",
+        "name" => "Youtube",
+        "url" => "",
+    ],
+    (object) [
+        "icon" => "tiktok",
+        "name" => "TikTok",
+        "url" => "",
+    ],
+];
+
+?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -37,16 +130,13 @@
 
                     <div class="c-header-content">
                         <nav class="nav c-header-nav">
-                            <a class="c-header-nav-link"
-                                href="http://localhost/cortsfront">
-                                Início
+                            <?php foreach ($menuHeader as $menuH): ?>
+                            <a class="c-header-nav-link" href="<?= $menuH->url ?>"
+                                target="<?= $menuH->target ?>"
+                                title="<?= $menuH->title ?>">
+                                <?= $menuH->text ?>
                             </a>
-                            <a class="c-header-nav-link" href="#services">
-                                Cortes e preços
-                            </a>
-                            <a class="c-header-nav-link" href="client.php?action=login">
-                                Área do cliente
-                            </a>
+                            <?php endforeach; ?>
                         </nav>
 
                         <div class="c-header-account">
@@ -105,50 +195,27 @@
             <div class="row justify-content-center pb-4">
                 <div class="col-12 col-lg-10">
                     <div class="row justify-content-center services-list">
-                        <?php
-                        $services = [
-                            [
-                                "image" => "corte-social",
-                                "title" => "Corte Social",
-                                "price" => "25",
-                                "icon" => "scissor"
-                            ],
-                            [
-                                "image" => "corte-degrade",
-                                "title" => "Corte Degradê",
-                                "price" => "35",
-                                "icon" => "scissor"
-                            ],
-                            [
-                                "image" => "corte-barba",
-                                "title" => "Corte Barba",
-                                "price" => "50",
-                                "icon" => "beard"
-                            ],
-                        ];
-                        ?>
-
                         <?php foreach ($services as $key => $service): ?>
                         <div class="col-10 col-sm-6 col-md-4 mb-4 services-item">
                             <div class="card card-body bg-transparent border-0">
                                 <div class="d-flex flex-row mb-2">
                                     <div class="icon">
-                                        <img src="./assets/img/icons/<?= $service["icon"] ?>.svg"
+                                        <img src="./assets/img/icons/<?= $service->icon ?>.svg"
                                             alt="">
                                     </div>
                                     <div class="info">
                                         <h4>
-                                            <?= $service["title"] ?>
+                                            <?= $service->title ?>
                                         </h4>
                                         <p class="h3 mb-0">
-                                            R$ <?= $service["price"] ?>
+                                            R$ <?= $service->price ?>
                                         </p>
                                     </div>
                                 </div>
 
                                 <img class="service-image img-fluid"
-                                    src="./assets/img/<?= $service["image"] ?>.jpg"
-                                    alt="<?= $service["title"] ?>">
+                                    src="./assets/img/<?= $service->image ?>.jpg"
+                                    alt="<?= $service->title ?>">
                             </div>
                         </div>
                         <?php endforeach; ?>
@@ -282,20 +349,6 @@
                     <div class="splide" id="photos-galery">
                         <div class="splide__track">
                             <ul class="splide__list">
-                                <?php
-                                $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-                                $photos = [
-                                    ["name" => "", "url" => "foto-barba.jpg"],
-                                    ["name" => "", "url" => "foto-items-de-barbearia.jpg"],
-                                    ["name" => "", "url" => "foto-degrade.jpg"],
-                                    ["name" => "", "url" => "foto-degrade-2.jpg"],
-                                    ["name" => "", "url" => "foto-degrade-3.jpg"],
-                                    ["name" => "", "url" => "foto-social.jpg"],
-                                    ["name" => "", "url" => "foto-tesouras.jpg"],
-                                    ["name" => "", "url" => "foto-barbearia-interior.jpg"],
-                                    ["name" => "", "url" => "foto-barbearia.jpg"],
-                                ];
-                                ?>
                                 <?php foreach ($photos as $item): ?>
                                 <li class="splide__slide">
                                     <div class="card card-body border-0 p-1 justify-content-center align-items-center overflow-hidden"
@@ -303,9 +356,9 @@
                                         <a class="position-absolute" href=""
                                             data-bs-toggle="modal"
                                             data-bs-target="#photo-view"
-                                            data-image="./assets/img/photos/<?= $item["url"] ?>">
-                                            <img src="./assets/img/photos/<?= $item["url"] ?>"
-                                                alt="">
+                                            data-image="./assets/img/photos/<?= $item->url ?>">
+                                            <img src="./assets/img/photos/<?= $item->url ?>"
+                                                alt="<?= $item->name ?>">
                                         </a>
                                     </div>
                                 </li>
@@ -386,7 +439,7 @@
                                 </svg>
                             </div>
                             <div class="description ms-3">
-                                <span class="h4">contato@corts.com</span>
+                                <span class="h4">example@domain.com</span>
                             </div>
                         </div>
 
@@ -426,62 +479,26 @@
                     <div class="col-12 col-md-5 mb-5 mb-md-0">
                         <img class="logo" src="./assets/img/logo.svg" alt="Corts">
                         <div class="pt-4 nav footer-socials">
-                            <?php
-                            $socials = [
-                                [
-                                    "icon" => "facebook",
-                                    "name" => "Facebook",
-                                    "url" => "",
-                                ],
-                                [
-                                    "icon" => "instagram",
-                                    "name" => "Instagram",
-                                    "url" => "",
-                                ],
-                                [
-                                    "icon" => "twitter",
-                                    "name" => "Twitter",
-                                    "url" => "",
-                                ],
-                                [
-                                    "icon" => "youtube",
-                                    "name" => "Youtube",
-                                    "url" => "",
-                                ],
-                                [
-                                    "icon" => "tiktok",
-                                    "name" => "TikTok",
-                                    "url" => "",
-                                ],
-                            ];
-                            foreach ($socials as $social):
-                            ?>
-                            <a class="nav-link" href="<?= $social["url"] ?>"
-                                title="<?= $social["name"] ?>" target="_blank">
-                                <img src="./assets/img/icons/<?= $social["icon"] ?>.svg"
-                                    alt="<?= $social["name"] ?>">
+                            <?php foreach ($socials as $social): ?>
+                            <a class="nav-link" href="<?= $social->url ?>"
+                                title="<?= $social->name ?>" target="_blank">
+                                <img src="./assets/img/icons/<?= $social->icon ?>.svg"
+                                    alt="<?= $social->name ?>">
                             </a>
-                            <?php
-                            endforeach;
-                            ?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
 
                     <div class="col-12 col-sm-6 col-md-3 mb-4 mb-sm-0">
                         <h4>MENU</h4>
                         <nav class="nav flex-column footer-menu">
-                            <a href="" class="nav-link">
-                                Início
+                            <?php foreach($menuFooter as $menuF): ?>
+                            <a class="nav-link" href="<?= $menuF->url ?>"
+                                target="<?= $menuF->target ?>"
+                                title="<?= $menuF->title ?>">
+                                <?= $menuF->text ?>
                             </a>
-                            <a href="" class="nav-link">
-                                Cortes e preços
-                            </a>
-                            <a href="" class="nav-link">
-                                Área do cliente
-                            </a>
-                            <a href="" class="nav-link">
-                                Agendar atendimento
-                            </a>
+                            <?php endforeach; ?>
                         </nav>
                     </div>
 
@@ -496,8 +513,8 @@
                                 +55 67 90000-0000
                             </a>
                             <a class="nav-link text-muted"
-                                href="mailto:atendimento@corts.com">
-                                atendimento@corts.com
+                                href="mailto:example@domain.com">
+                                example@domain.com
                             </a>
                         </nav>
                     </div>
@@ -506,7 +523,9 @@
                 <div class="text-center mt-auto pb-3">
                     <small>
                         <p class="mb-0">
-                            Todos os direitos reservados
+                            Todos os direitos reservados - By <a
+                                href="https://github.com/ernandesrs" title="Github"
+                                target="_blank">Ernandes</a>
                         </p>
                         <p class="mb-0">
                             <a href="">
@@ -551,3 +570,4 @@
     <script src="./assets/js/scripts.min.js"></script>
 
 </body>
+</html>

@@ -91,37 +91,6 @@ $header-mobile-width: 275px;
                 display: flex;
                 justify-content: center;
                 margin-top: auto;
-
-                a {
-                    padding: 10px 20px;
-                    margin: 0 2px;
-                    border-radius: 4px;
-                    border: 1px solid transparent;
-                    color: $light;
-                    transition-duration: .5s;
-
-                    &:hover {
-                        transition-duration: .5s;
-                    }
-
-                    &:nth-child(1) {
-                        background-color: transparent;
-                        border-color: $primary;
-
-                        &:hover {
-                            background-color: rgb($primary, .75);
-                        }
-                    }
-
-                    &:nth-child(2) {
-                        background-color: $primary;
-                        border-color: $primary;
-
-                        &:hover {
-                            background-color: rgba($primary, .75);
-                        }
-                    }
-                }
             }
 
             &.active {
