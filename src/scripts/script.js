@@ -1,46 +1,46 @@
-
-/**
- * 
- */
-class CHeader {
-    constructor(toggler = ".c-header-toggler", togglable = ".c-header-content") {
-        this.toggler = document.querySelector(toggler);
-        this.nav = document.querySelector(togglable);
-        this.active = false;
-    }
-
-    init() {
-        if (this.toggler)
-            this.setEvent();
-    };
-
-    setEvent() {
-        this.toggler.addEventListener("click", (event) => {
-            event.preventDefault();
-            this.showHiddenNav();
-        });
-    }
-
-    showHiddenNav() {
-        this.toggler.classList.toggle("active");
-        this.nav.classList.toggle("active");
-        if (this.toggler.classList.contains("active"))
-            this.active = true;
-        else
-            this.active = false;
-
-        if (this.active) this.navLinksAnimation();
-    }
-
-    navLinksAnimation() {
-        let navLinks = this.nav.querySelectorAll(".c-header-nav .c-header-nav-link");
-
-        if (!navLinks) return;
-        navLinks.forEach((item, key) => {
-            item.style.transitionDelay = (key * .125) + "s";
-        });
+const options = {
+    type: "loop",
+    perPage: 1,
+    arrows: false,
+    pagination: 'splide__pagination',
+    grid: {
+        rows: 2,
+        cols: 3,
+        gap: {
+            row: '.25rem',
+            col: '.25rem',
+        },
+    },
+    breakpoints: {
+        1200: {
+            grid: {
+                rows: 2,
+                cols: 3
+            }
+        },
+        768: {
+            grid: {
+                rows: 2,
+                cols: 2
+            }
+        },
+        576: {
+            grid: {
+                rows: 2,
+                cols: 2
+            }
+        },
+        320: {
+            grid: {
+                rows: 3,
+                cols: 1
+            }
+        }
     }
 };
 
-(new CHeader()).init();
+// splide
+(new Splide("#photos-galery", options)).mount(window.splide.Extensions);
 
+// header
+(new CHeader()).init();

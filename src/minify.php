@@ -10,8 +10,10 @@ use MatthiasMullie\Minify;
 $jsbase = __DIR__ . "/scripts";
 $jsMinify = new Minify\JS();
 
+$jsMinify->add($jsbase . "/cheader.js");
 $jsMinify->add($jsbase . "/script.js");
 
+$jsMinify->minify(__DIR__ . "/../assets/js/scripts.min.js");
 $jsMinify->minify(__DIR__ . "/../assets/js/scripts.min.js");
 
 /**

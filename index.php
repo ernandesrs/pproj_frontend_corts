@@ -63,7 +63,8 @@
     <section class="feature">
         <div class="container">
             <div class="feature-inner d-flex flex-column justify-content-center">
-                <div class="row justify-content-center justify-content-lg-start text-center text-lg-start">
+                <div
+                    class="row justify-content-center justify-content-lg-start text-center text-lg-start">
                     <div class="col-12 col-md-10 col-lg-7">
                         <h1 class="feature-title">
                             Nós surpreendemos você e você surpreende o mundo com <span
@@ -318,7 +319,7 @@
         </div>
     </section>
 
-    <section class="section location">
+    <section class="section location bg-primary">
         <div class="container">
             <div class="row justify-content-center pb-4 text-center">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
@@ -514,51 +515,9 @@
         </div>
     </footer>
 
-    <script src="./assets/js/scripts.min.js"></script>
     <script src="./assets/js/splide.min.js"></script>
+    <script src="./assets/js/scripts.min.js"></script>
 
-    <script>
-        let galery = new Splide("#photos-galery", {
-            type: "loop",
-            perPage: 1,
-            arrows: false,
-            pagination: 'splide__pagination',
-            grid: {
-                rows: 2,
-                cols: 3,
-                gap: {
-                    row: '.25rem',
-                    col: '.25rem',
-                },
-            },
-            breakpoints: {
-                1200: {
-                    grid: {
-                        rows: 2,
-                        cols: 3
-                    }
-                },
-                768: {
-                    grid: {
-                        rows: 2,
-                        cols: 2
-                    }
-                },
-                576: {
-                    grid: {
-                        rows: 2,
-                        cols: 2
-                    }
-                },
-                320: {
-                    grid: {
-                        rows: 3,
-                        cols: 1
-                    }
-                }
-            }
-        });
-    </script>
 </body>
 
 </html>

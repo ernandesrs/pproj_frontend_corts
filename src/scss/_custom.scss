@@ -248,7 +248,7 @@ body {
     .map-area {
         background-color: $dark-dark;
         width: 100%;
-        height: 475px;
+        height: 375px;
         border-radius: $border-radius;
         box-shadow: $box-shadow;
 
@@ -262,7 +262,8 @@ body {
 }
 
 .footer {
-    height: 23.438rem;
+    min-height: 20rem;
+    padding: $spacer * 3 0;
 
     .container {
         height: 100%;
