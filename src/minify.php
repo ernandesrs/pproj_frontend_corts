@@ -12,8 +12,8 @@ $jsMinify = new Minify\JS();
 
 $jsMinify->add($jsbase . "/cheader.js");
 $jsMinify->add($jsbase . "/script.js");
+$jsMinify->add(__DIR__ . "/../node_modules/bootstrap/dist/js/bootstrap.min.js");
 
-$jsMinify->minify(__DIR__ . "/../assets/js/scripts.min.js");
 $jsMinify->minify(__DIR__ . "/../assets/js/scripts.min.js");
 
 /**

@@ -300,9 +300,13 @@
                                 <li class="splide__slide">
                                     <div class="card card-body border-0 p-1 justify-content-center align-items-center overflow-hidden"
                                         style="height:250px;">
-                                        <img class="position-absolute"
-                                            src="./assets/img/photos/<?= $item["url"] ?>"
-                                            alt="">
+                                        <a class="position-absolute" href=""
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#photo-view"
+                                            data-image="./assets/img/photos/<?= $item["url"] ?>">
+                                            <img src="./assets/img/photos/<?= $item["url"] ?>"
+                                                alt="">
+                                        </a>
                                     </div>
                                 </li>
                                 <?php endforeach; ?>
@@ -319,7 +323,7 @@
         </div>
     </section>
 
-    <section class="section location bg-primary">
+    <section class="section location">
         <div class="container">
             <div class="row justify-content-center pb-4 text-center">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
@@ -515,9 +519,35 @@
         </div>
     </footer>
 
+    <!-- modal: photo view -->
+    <div class="modal" tabindex="-1" id="photo-view">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="photo-view-label">Preview</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body d-flex justify-content-center align-items-center">
+                    <div class="loading-area text-center">
+                        <div class="spinner-border text-secondary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="pt-2">
+                            <strong>
+                                Carregando imagem...
+                            </strong>
+                        </div>
+                    </div>
+                    <div class="image-area d-none"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /modal: photo view -->
+
     <script src="./assets/js/splide.min.js"></script>
     <script src="./assets/js/scripts.min.js"></script>
 
 </body>
-
-</html>
