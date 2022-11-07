@@ -5,19 +5,19 @@ require __DIR__ . "/config.php";
 $menuHeader = [
     (object) [
         "text" => "Dashboard",
-        "url" => URL_BASE,
+        "url" => URL_BASE . "/client.php?action=dash",
         "target" => "_self",
         "title" => "Resumo geral"
     ],
     (object) [
         "text" => "Agendamentos",
-        "url" => URL_BASE,
+        "url" => URL_BASE . "/client.php?action=schedules",
         "target" => "_self",
         "title" => "Meus agendamentos"
     ],
     (object) [
         "text" => "Perfil",
-        "url" => URL_BASE,
+        "url" => URL_BASE . "/client.php?action=profile",
         "target" => "_self",
         "title" => "Meu perfil"
     ],
@@ -52,6 +52,23 @@ $socials = (object) [
     ],
 ];
 
+$action = $_GET["action"] ?? "dash";
+
+$views = (object) [
+    "dash" => (object) [
+        "title" => "Painel do cliente"
+    ],
+    "schedules" => (object) [
+        "title" => "Meus agendamentos"
+    ],
+    "new-schedule" => (object) [
+        "title" => "Novo agendamento"
+    ],
+    "profile" => (object) [
+        "title" => "Meu perfil"
+    ],
+];
+
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +78,8 @@ $socials = (object) [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corts - Painel do cliente</title>
+    <title>Corts - <?= $views->$action->title ?>
+    </title>
 
     <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/dash.styles.min.css">
@@ -96,13 +114,16 @@ $socials = (object) [
     <main class="main">
         <div class="container">
             <div class="container pb-3">
-                <p class="h3 mb-0">Bem vindo Cliente!</p>
+                <p class="h3 mb-0">
+                    <?= $views->$action->title . ($action == "dash" ? " - Bem vindo Cliente!" :
+                        "") ?>
+                </p>
             </div>
             <div class="main-content">
                 <div class="row">
                     <div class="col-12 col-lg-8">
                         <div class="card card-body bg-trasparent content">
-
+                            <?php include __DIR__ . "/src/views/dash/" . $action . ".php" ?>
                         </div>
                     </div>
 
@@ -121,7 +142,8 @@ $socials = (object) [
                                 <a href="" class="nav-link">
                                     Sair
                                 </a>
-                                <a href="#schedule" class="nav-link btn btn-outline-primary mt-5">
+                                <a href="<?= URL_BASE . "/client.php?action=new-schedule" ?>"
+                                    class="nav-link btn btn-outline-primary mt-5">
                                     Novo agendamento
                                 </a>
                             </nav>
