@@ -66,7 +66,7 @@ $views = (object) [
             </div>
 
             <div class="p-4 d-flex justify-content-center align-items-center  inner-box-content">
-                <?php include __DIR__ . "/src/views/" . $action . ".php" ?>
+                <?php include __DIR__ . "/src/views/account/" . $action . ".php" ?>
             </div>
         </div>
     </div>

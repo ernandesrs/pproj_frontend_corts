@@ -261,27 +261,31 @@ $socials = (object) [
                                     href="account.php?action=login">
                                     Fazer login
                                 </a>
-                                <a class="btn btn-outline-primary"
-                                    href="account.php?action=register">
-                                    Iniciar um cadastrado grátis
-                                </a>
                             </div>
                         </div>
 
                         <div class="right-side px-4 order-lg-1">
                             <h3 class="mb-3">
-                                Agendamento rápido
+                                Faça um cadastro
                             </h3>
                             <p class="mb-3">
-                                Faça um agendamento rápido conosco
+                                O cadastro é simples, rápido, gratuito e te garante benefícios.
                             </p>
                             <div>
                                 <form action="">
                                     <div class="mb-2">
                                         <div class="form-floating">
                                             <input type="text" class="form-control"
-                                                id="full_name" placeholder="Seu nome">
-                                            <label for="full_name">Nome</label>
+                                                id="first_name" placeholder="Seu nome">
+                                            <label for="first_name">Nome</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control"
+                                                id="last_name" placeholder="Seu sobrenome">
+                                            <label for="last_name">Sobrenome</label>
                                         </div>
                                     </div>
 
@@ -294,39 +298,13 @@ $socials = (object) [
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="mb-2">
-                                        <div class="form-floating">
-                                            <select class="form-control" id="email"
-                                                placeholder="Seu horário">
-                                                <option selected>
-                                                    Escolha
-                                                </option>
-                                                <option value="">
-                                                    Quinta-feirta - 8:30
-                                                </option>
-                                                <option value="">
-                                                    Quinta-feirta - 8:50
-                                                </option>
-                                                <option value="">
-                                                    Quinta-feirta - 9:20
-                                                </option>
-                                            </select>
-                                            <label for="email">Seu melhor horário</label>
-                                        </div>
-                                    </div>
-
+                                    
                                     <div
                                         class="d-flex flex-column justify-content-center align-items-center pt-2">
                                         <a class="btn btn-primary"
-                                            href="<?= URL_BASE . "?action=schedule_finalize" ?>">
-                                            Finalizar agendamento
+                                            href="<?= URL_BASE . "/account.php?action=register" ?>">
+                                            Finalizar cadastro
                                         </a>
-                                        <small class="py-2">
-                                            <a href="">
-                                                Regulamentos
-                                            </a>
-                                        </small>
                                     </div>
                                 </form>
                             </div>
@@ -595,10 +573,10 @@ $socials = (object) [
     </div>
     <!-- /modal: photo view -->
 
-    <script src="./assets/js/simple-parallax.min.js"></script>
-    <script src="./assets/js/aos.min.js"></script>
-    <script src="./assets/js/splide.min.js"></script>
-    <script src="./assets/js/scripts.min.js"></script>
+<script src="./assets/js/simple-parallax.min.js"></script>
+<script src="./assets/js/aos.min.js"></script>
+<script src="./assets/js/splide.min.js"></script>
+<script src="./assets/js/scripts.min.js"></script>
 
 </body>
 

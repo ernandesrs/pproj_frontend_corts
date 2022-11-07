@@ -116,8 +116,11 @@ $views = (object) [
         <div class="container">
             <div class="container pb-3">
                 <p class="h3 mb-0">
-                <i class='bx bxs-dashboard'></i> <span class="ms-2"><?= $views->$action->title . ($action == "dash" ? " - Bem vindo Cliente!" :
-                        "") ?></span>
+                <i class='bx bxs-dashboard'></i>
+                <span class="ms-2">
+                    <?= $views->$action->title . ($action == "dash" ? " - Bem vindo Cliente!" :
+                        "") ?>
+                        </span>
                 </p>
             </div>
             <div class="main-content">
