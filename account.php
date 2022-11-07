@@ -42,15 +42,18 @@ $views = (object) [
 
 <body class="account-body">
     <div class="container">
-        <div class="inner-box">
-            <div class="py-4 d-flex align-items-center inner-box-header">
-                <a class="logo" href="<?= URL_BASE ?>">
-                    <img src="./assets/img/logo.svg" alt="Logo">
-                </a>
-                <h1 class="ms-4 h4 mb-0 fw-medium">
-                    <?= $views->$action->title ?>
-                </h1>
-                <nav class="d-flex align-items-center ms-auto">
+        <div
+            class="inner-box">
+            <div class="py-4 d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center inner-box-header">
+                <div class="d-flex align-items-center mb-3 mb-md-0">
+                    <a class="logo" href="<?= URL_BASE ?>">
+                        <img src="./assets/img/logo.svg" alt="Logo">
+                    </a>
+                    <h1 class="ms-4 h4 mb-0 fw-medium">
+                        <?= $views->$action->title ?>
+                    </h1>
+                </div>
+                <nav class="d-flex align-items-center ms-md-auto">
                     <a class="btn <?= $action == "login" ? "btn-primary" : "text-primary" ?> px-4 mx-1"
                         href="account.php?action=login">
                         Login
@@ -61,7 +64,8 @@ $views = (object) [
                     </a>
                 </nav>
             </div>
-            <div class="p-4 inner-box-content">
+
+            <div class="p-4 d-flex justify-content-center align-items-center  inner-box-content">
                 <?php include __DIR__ . "/src/views/" . $action . ".php" ?>
             </div>
         </div>

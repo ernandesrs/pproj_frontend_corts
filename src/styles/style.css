@@ -10847,6 +10847,7 @@ body.account-body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
   justify-content: center;
   align-items: center;
 }
@@ -10862,9 +10863,6 @@ body.account-body .inner-box .inner-box-header .logo img {
   height: 45px;
 }
 body.account-body .inner-box .inner-box-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: rgba(34, 34, 34, 0.75);
   width: 100%;
   min-height: 425px;
