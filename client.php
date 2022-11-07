@@ -82,6 +82,7 @@ $views = (object) [
     </title>
 
     <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/boxicons.min.css">
     <link rel="stylesheet" href="./assets/css/dash.styles.min.css">
 </head>
 
@@ -115,8 +116,8 @@ $views = (object) [
         <div class="container">
             <div class="container pb-3">
                 <p class="h3 mb-0">
-                    <?= $views->$action->title . ($action == "dash" ? " - Bem vindo Cliente!" :
-                        "") ?>
+                <i class='bx bxs-dashboard'></i> <span class="ms-2"><?= $views->$action->title . ($action == "dash" ? " - Bem vindo Cliente!" :
+                        "") ?></span>
                 </p>
             </div>
             <div class="main-content">

@@ -72,8 +72,15 @@ $aosJs->add(__DIR__ . "/../node_modules/aos/dist/aos.js");
 $aosJs->minify(__DIR__ . "/../assets/js/aos.min.js");
 
 /**
- * AOS
+ * AOS CSS
  */
 $aosCss = new Minify\CSS();
 $aosCss->add(__DIR__ . "/../node_modules/aos/dist/aos.css");
 $aosCss->minify(__DIR__ . "/../assets/css/aos.min.css");
+
+/**
+ * Boxicons CSS
+ */
+$boxiconsCss = new Minify\CSS();
+$boxiconsCss->add(__DIR__ . "/../node_modules/boxicons/css/boxicons.css");
+$boxiconsCss->minify(__DIR__ . "/../assets/css/boxicons.min.css");
