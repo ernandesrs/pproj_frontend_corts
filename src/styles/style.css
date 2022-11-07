@@ -10862,10 +10862,45 @@ body.account-body .inner-box .inner-box-header .logo img {
   height: 45px;
 }
 body.account-body .inner-box .inner-box-content {
+  display: flex;
+  align-items: center;
   background-color: rgba(34, 34, 34, 0.75);
   width: 100%;
-  min-height: 475px;
+  min-height: 425px;
   border-radius: 0.5rem;
+}
+body.account-body .icon-check {
+  width: 150px;
+  height: 150px;
+  border: 10px solid #A78B28;
+  border-radius: 50%;
+  position: relative;
+}
+body.account-body .icon-check::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 27.5px;
+  width: 75px;
+  height: 50px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-left-width: 10px;
+  border-bottom-width: 10px;
+  border-color: #A78B28;
+  border-style: solid;
+  transform: rotateZ(-45deg) rotateY(0deg);
+  animation: checking 0.5s ease-out;
+}
+@keyframes checking {
+  0% {
+    transform: rotateZ(-45deg) rotateY(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateZ(-45deg) rotateY(0deg);
+    opacity: 1;
+  }
 }
 
 .header-bg {

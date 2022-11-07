@@ -2,7 +2,7 @@
 
 require __DIR__ . "/config.php";
 
-$action = $_GET["action"] ?? "login";
+$action = $_GET["action"] ?? "account-created";
 
 $views = (object) [
     "login" => (object) [
@@ -10,6 +10,9 @@ $views = (object) [
     ],
     "register" => (object) [
         "title" => "Criar conta"
+    ],
+    "account-created" => (object) [
+        "title" => "Conta criada"
     ],
     "forget" => (object) [
         "title" => "Esquecia a senha"
@@ -56,7 +59,7 @@ $views = (object) [
                 </nav>
             </div>
             <div class="p-4 inner-box-content">
-                FOMULARP
+                <?php include __DIR__ . "/src/views/" . $action . ".php" ?>
             </div>
         </div>
     </div>
