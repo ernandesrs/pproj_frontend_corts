@@ -17,7 +17,10 @@ $views = (object) [
     "forget" => (object) [
         "title" => "Esquecia a senha"
     ],
-    "update-password" => (object) [
+    "forget-link-sent" => (object) [
+        "title" => "Link enviado"
+    ],
+    "password-update" => (object) [
         "title" => "Atualizar senha"
     ],
 ];

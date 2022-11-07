@@ -10863,6 +10863,7 @@ body.account-body .inner-box .inner-box-header .logo img {
 }
 body.account-body .inner-box .inner-box-content {
   display: flex;
+  justify-content: center;
   align-items: center;
   background-color: rgba(34, 34, 34, 0.75);
   width: 100%;
