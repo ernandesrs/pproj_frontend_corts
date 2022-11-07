@@ -63,28 +63,29 @@ $photos = [
     (object) ["name" => "", "url" => "foto-barbearia.jpg"],
 ];
 
-$socials = [
-    (object) [
+$socials = (object) [
+    "facebook" => (object) [
         "icon" => "facebook",
         "name" => "Facebook",
         "url" => "",
     ],
-    (object) [
+    "instagram" => (object) [
         "icon" => "instagram",
         "name" => "Instagram",
-        "url" => "",
+        "user" => "@username",
+        "url" => "#",
     ],
-    (object) [
+    "twitter" => (object) [
         "icon" => "twitter",
         "name" => "Twitter",
         "url" => "",
     ],
-    (object) [
+    "youtube" => (object) [
         "icon" => "youtube",
         "name" => "Youtube",
         "url" => "",
     ],
-    (object) [
+    "tiktok" => (object) [
         "icon" => "tiktok",
         "name" => "TikTok",
         "url" => "",
@@ -226,12 +227,13 @@ $socials = [
             </div>
 
             <div class="text-center">
-                <a href="" class="btn btn-outline-primary" data-aos="fade-up"
+                <a href="<?= URL_BASE . "/action=login" ?>"
+                    class="btn btn-outline-primary" data-aos="fade-up"
                     data-aos-duration="750">
                     Sou cliente
                 </a>
-                <a href="" class="btn btn-primary" data-aos="fade-up" data-aos-delay="275"
-                    data-aos-duration="750">
+                <a href="#schedule" class="btn btn-primary" data-aos="fade-up"
+                    data-aos-delay="275" data-aos-duration="750">
                     Agendamento horário
                 </a>
             </div>
@@ -317,7 +319,8 @@ $socials = [
 
                                     <div
                                         class="d-flex flex-column justify-content-center align-items-center pt-2">
-                                        <a class="btn btn-primary" href="">
+                                        <a class="btn btn-primary"
+                                            href="<?= URL_BASE . "?action=schedule_finalize" ?>">
                                             Finalizar agendamento
                                         </a>
                                         <small class="py-2">
@@ -338,48 +341,61 @@ $socials = [
 
     <section class="section album">
         <div class="container">
-            <div class="row justify-content-center pb-4 text-center">
-                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                    <h1 data-aos="zoom-in-up">
-                        Galeria
-                    </h1>
-                    <p class="h4" data-aos="zoom-in-up">
-                        Veja alguns de nossos trabalhos já realizados
-                    </p>
-                </div>
-            </div>
-
-            <div class="row justify-content-center" data-aos="fade-up"
-                data-aos-duration="750">
-                <div class="col-12 col-md-10 col-lg-8">
-                    <div class="splide" id="photos-galery">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                <?php foreach ($photos as $item): ?>
-                                <li class="splide__slide">
-                                    <div class="card card-body border-0 p-1 justify-content-center align-items-center overflow-hidden"
-                                        style="height:250px;">
-                                        <a class="position-absolute" href=""
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#photo-view"
-                                            data-image="./assets/img/photos/<?= $item->url ?>">
-                                            <img src="./assets/img/photos/<?= $item->url ?>"
-                                                alt="<?= $item->name ?>">
-                                        </a>
-                                    </div>
-                                </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-
-                        <div
-                            class="splide__pagination splide__pagination--ltr position-relative py-4">
-                        </div>
+            <div class="row justify-content-center pb-4">
+                <div class="col-12 col-md-10 col-lg-8 d-flex justify-content-center align-items-center flex-column flex-md-row mb-4">
+                    <div class="me-md-auto text-center text-md-start mb-2">
+                        <h1 data-aos="zoom-in-up">
+                            Galeria
+                        </h1>
+                        <p class="h4" data-aos="zoom-in-up">
+                            Veja alguns de nossos trabalhos já realizados
+                        </p>
                     </div>
+                    <?php if ($socials->instagram ?? null): ?>
+                    <div class="d-flex flex-column align-items-center align-items-md-start">
+                        <span class="small d-block mb-1">Siga-nos no <?= $socials->instagram->name ?></span>
+                        <a href="<?= $socials->instagram->url ?>"
+                            title="Siga-nos no <?= $socials->instagram->name ?> para ver mais"
+                            target="_blank">
+                            <img src="./assets/img/icons/<?= $socials->instagram->icon ?>.svg"
+                                alt="">
+                            <?= $socials->instagram->user ?>
+                        </a>
+                        <?php endif; ?>
+                    </div>
+                </div>
 
+                <div class="row justify-content-center" data-aos="fade-up"
+                    data-aos-duration="750">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <div class="splide" id="photos-galery">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <?php foreach ($photos as $item): ?>
+                                    <li class="splide__slide">
+                                        <div class="card card-body border-0 p-1 justify-content-center align-items-center overflow-hidden"
+                                            style="height:250px;">
+                                            <a class="position-absolute" href=""
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#photo-view"
+                                                data-image="./assets/img/photos/<?= $item->url ?>">
+                                                <img src="./assets/img/photos/<?= $item->url ?>"
+                                                    alt="<?= $item->name ?>">
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+
+                            <div
+                                class="splide__pagination splide__pagination--ltr position-relative py-4">
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <section class="section location">
