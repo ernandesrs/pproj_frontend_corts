@@ -5,7 +5,7 @@ require __DIR__ . "/../vendor/autoload.php";
 use MatthiasMullie\Minify;
 
 /**
- * JS
+ * JS: front
  */
 $jsbase = __DIR__ . "/scripts";
 $jsMinify = new Minify\JS();
@@ -17,15 +17,37 @@ $jsMinify->add(__DIR__ . "/../node_modules/bootstrap/dist/js/bootstrap.min.js");
 $jsMinify->minify(__DIR__ . "/../assets/js/scripts.min.js");
 
 /**
- * CSS
+ * JS: dash
+ */
+$jsbase = __DIR__ . "/scripts";
+$jsMinifyDash = new Minify\JS();
+
+$jsMinifyDash->add($jsbase . "/cheader.js");
+$jsMinifyDash->add($jsbase . "/dash.script.js");
+$jsMinifyDash->add(__DIR__ . "/../node_modules/bootstrap/dist/js/bootstrap.min.js");
+
+$jsMinifyDash->minify(__DIR__ . "/../assets/js/dash.scripts.min.js");
+
+/**
+ * CSS: front
  */
 $cssbase = __DIR__ . "/styles";
-$cssMinify = new Minify\CSS();
+$cssMinifyFront = new Minify\CSS();
 
-$cssMinify->add($cssbase . "/style.css");
-$cssMinify->add(__DIR__ . "/../node_modules/@splidejs/splide/dist/css/splide.min.css");
+$cssMinifyFront->add($cssbase . "/style.css");
+$cssMinifyFront->add(__DIR__ . "/../node_modules/@splidejs/splide/dist/css/splide.min.css");
 
-$cssMinify->minify(__DIR__ . "/../assets/css/styles.min.css");
+$cssMinifyFront->minify(__DIR__ . "/../assets/css/styles.min.css");
+
+/**
+ * CSS: dash
+ */
+$cssbase = __DIR__ . "/styles";
+$cssMinifyDash = new Minify\CSS();
+
+$cssMinifyDash->add($cssbase . "/dash.style.css");
+
+$cssMinifyDash->minify(__DIR__ . "/../assets/css/dash.styles.min.css");
 
 /**
  * SPLIDE

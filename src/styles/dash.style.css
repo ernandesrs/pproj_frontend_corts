@@ -10797,7 +10797,7 @@ body.account-body .icon-check::before {
 }
 
 .footer {
-  min-height: 20rem;
+  min-height: 5rem;
   padding: 3rem 0;
 }
 .footer .container {
@@ -10827,316 +10827,88 @@ body.account-body .icon-check::before {
   margin: 0.25rem;
 }
 
-.c-header {
-  display: flex;
-  align-items: center;
-  height: 150px;
+body.client-dash-body .main {
+  min-height: calc(100vh - 14.375rem);
 }
-.c-header .c-header-leftside {
-  background-color: transparent;
-}
-.c-header .c-header-rightside {
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin-left: auto;
-  position: relative;
-  z-index: 900;
-}
-.c-header .c-header-rightside .c-header-toggler {
+
+.header .sidebar-toggler {
   background: transparent;
-  height: 150px;
+  height: 9.375rem;
   font-size: 2.5rem;
   color: #EBEBEB;
   border: 0;
   cursor: pointer;
-  position: absolute;
+  top: 0;
   right: 0;
 }
-.c-header .c-header-rightside .c-header-toggler .c-header-toggler-close {
+.header .sidebar-toggler .toggler-close {
   display: none;
 }
-.c-header .c-header-rightside .c-header-toggler.active {
+.header .sidebar-toggler.active {
   position: fixed;
 }
-.c-header .c-header-rightside .c-header-toggler.active .c-header-toggler-close {
+.header .sidebar-toggler.active .toggler-close {
   display: block;
 }
-.c-header .c-header-rightside .c-header-toggler.active .c-header-toggler-open {
+.header .sidebar-toggler.active .toggler-open {
   display: none;
 }
-.c-header .c-header-rightside .c-header-toggler span,
-.c-header .c-header-rightside .c-header-toggler i {
+.header .sidebar-toggler span,
+.header .sidebar-toggler i {
   pointer-events: none;
 }
-.c-header .c-header-rightside .c-header-content {
-  display: flex;
-  flex-direction: column;
-  background-color: #131313;
-  width: 100%;
+
+.main .main-content {
+  background-color: rgba(34, 34, 34, 0.75);
+  padding: 1.5rem 1rem;
+}
+.main .main-content .content {
+  background-color: transparent;
+  border: 1px solid rgba(235, 235, 235, 0.125) !important;
+}
+.main .main-content .sidebar {
+  background-color: rgba(19, 19, 19, 0.95);
   max-width: 275px;
-  height: calc(100vh - 150px);
-  padding: 12px;
+  height: calc(100vh - 9.375rem);
   position: fixed;
-  top: 150px;
+  top: 9.375rem;
   right: 0;
   transform: translateX(100%);
-  transition-duration: 0.125s;
-  transition-timing-function: ease-in-out;
-}
-.c-header .c-header-rightside .c-header-content .c-header-nav {
-  display: flex;
-  flex-direction: column;
-}
-.c-header .c-header-rightside .c-header-content .c-header-nav .c-header-nav-link {
-  display: block;
-  background-color: transparent;
-  padding: 15px 12px;
-  color: #EBEBEB;
-  transform: translateX(50%);
-  transition-duration: 0.375s;
-  transition-timing-function: ease-in-out;
-  opacity: 0;
-  border-bottom: 3px solid transparent;
-}
-.c-header .c-header-rightside .c-header-content .c-header-nav .c-header-nav-link:hover, .c-header .c-header-rightside .c-header-content .c-header-nav .c-header-nav-link.active {
-  border-color: #A78B28;
-}
-.c-header .c-header-rightside .c-header-content .c-header-nav .c-header-nav-link:hover {
-  padding-left: 16px;
   transition-duration: 0.25s;
+  transition-timing-function: ease-in;
 }
-.c-header .c-header-rightside .c-header-content .c-header-account {
-  display: flex;
-  justify-content: center;
-  margin-top: auto;
-}
-.c-header .c-header-rightside .c-header-content.active {
+.main .main-content .sidebar.active {
   transform: translateX(0%);
   transition-duration: 0.25s;
   transition-timing-function: ease-in;
 }
-.c-header .c-header-rightside .c-header-content.active .c-header-nav .c-header-nav-link {
+.main .main-content .sidebar.active .nav .nav-link {
   transform: translateX(0%);
   transition-timing-function: ease-in-out;
   opacity: 1;
 }
 
+.footer {
+  padding: 1.5rem 0 !important;
+}
+
 @media (min-width: 992px) {
-  .c-header .c-header-rightside .c-header-toggler {
+  .header .sidebar-toggler {
     display: none;
   }
-  .c-header .c-header-rightside .c-header-content {
-    display: flex;
-    flex-direction: row;
+  .main .main-content .content {
     background-color: transparent;
+  }
+  .main .main-content .sidebar {
+    background-color: transparent;
+    display: unset;
     max-width: unset;
     height: unset;
-    top: unset;
     position: relative;
-    padding: 0;
-    right: 0;
+    top: unset;
+    right: unset;
     transform: unset;
   }
-  .c-header .c-header-rightside .c-header-content .c-header-nav {
-    flex-direction: row;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 1.5rem;
-  }
-  .c-header .c-header-rightside .c-header-content .c-header-nav .c-header-nav-link {
-    transform: unset;
-    opacity: unset;
-  }
-  .c-header .c-header-rightside .c-header-content .c-header-nav .c-header-nav-link:hover {
-    padding-left: 12px;
-    opacity: 0.75;
-  }
-  .c-header .c-header-rightside .c-header-content .c-header-account {
-    align-items: center;
-    margin-top: unset;
-  }
-}
-.feature {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: calc(100vh - 150px);
-}
-.feature .container {
-  min-height: calc(100vh - 150px);
-}
-.feature .feature-title {
-  font-family: "IM Fell French Canon SC", sans-serif;
-  font-size: 1.5rem;
-  font-weight: unset;
-}
-.feature .feature-inner {
-  height: calc(100vh - (150px + 3.188rem));
-}
-.feature .button-services {
-  color: #EBEBEB;
-  height: 3.188rem;
-}
-.feature .button-services svg {
-  transform: translateY(-35%);
-}
-.feature .button-services svg path {
-  fill: #EBEBEB;
-}
-.feature .button-services:hover {
-  color: #EBEBEB;
-}
-.feature .button-services:hover svg {
-  transform: translateY(0) scale(0.75);
 }
 
-.section {
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
-  padding: 5rem 0;
-}
-.section .container {
-  position: relative;
-}
-
-.services .services-list .services-item {
-  position: relative;
-}
-.services .services-list .services-item .icon {
-  background-color: #A78B28;
-  width: 3.75rem;
-  height: 3.75rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.125rem;
-}
-.services .services-list .services-item .info {
-  padding-left: 1rem;
-}
-.services .services-list .services-item .service-image {
-  border-radius: 0.125rem;
-}
-
-.schedule {
-  position: relative;
-  overflow: hidden;
-}
-.schedule .parallax-image {
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
-}
-.schedule::before, .schedule::after {
-  content: "";
-  background-image: url(./../../assets/img/section-bg-triangle.svg);
-  width: 100%;
-  height: 75px;
-  position: absolute;
-  left: 0;
-}
-.schedule::before {
-  top: 0;
-}
-.schedule::after {
-  bottom: 0;
-  transform: rotateZ(180deg);
-}
-.schedule .floating-card {
-  background-color: rgba(19, 19, 19, 0.75);
-  border-radius: 0.125rem;
-}
-.schedule .floating-card .left-side,
-.schedule .floating-card .right-side {
-  width: 100%;
-}
-.schedule .floating-card .divider {
-  border-right: 2px solid rgba(189, 189, 189, 0.75);
-}
-
-.album {
-  background-color: transparent;
-}
-
-.location {
-  background-color: #222222;
-}
-.location .map-area {
-  background-color: #131313;
-  width: 100%;
-  height: 375px;
-  border-radius: 0.125rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-.location .map-area iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  border-radius: 0.125rem;
-}
-
-@media (min-width: 576px) {
-  body h1,
-body .h1 {
-    font-size: 1.75rem;
-  }
-  body h2,
-body .h2 {
-    font-size: 1.55rem;
-  }
-  body h3,
-body .h3 {
-    font-size: 1.35rem;
-  }
-  .feature .feature-title {
-    font-size: 1.75rem;
-  }
-}
-@media (min-width: 768px) {
-  body h1,
-body .h1 {
-    font-size: 2rem;
-  }
-  body h2,
-body .h2 {
-    font-size: 1.75rem;
-  }
-  body h3,
-body .h3 {
-    font-size: 1.45rem;
-  }
-  .feature .feature-title {
-    font-size: 2.25rem;
-  }
-}
-@media (min-width: 992px) {
-  body h1,
-body .h1 {
-    font-size: 2.5rem;
-  }
-  body h2,
-body .h2 {
-    font-size: 2rem;
-  }
-  body h3,
-body .h3 {
-    font-size: 1.5rem;
-  }
-  .header .logo img {
-    height: unset;
-  }
-  .feature .feature-title {
-    font-size: 2.75rem;
-  }
-  .schedule .floating-card .left-side,
-.schedule .floating-card .right-side {
-    width: 50%;
-  }
-}
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=dash.style.css.map */

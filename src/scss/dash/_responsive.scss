@@ -1,0 +1,32 @@
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+    .header {
+        .sidebar-toggler {
+            display: none;
+        }
+    }
+
+    .main {
+        .main-content {
+            .content {
+                background-color: transparent;
+            }
+
+            .sidebar {
+                background-color: transparent;
+                display: unset;
+                max-width: unset;
+                height: unset;
+                position: relative;
+                top: unset;
+                right: unset;
+                transform: unset;
+            }
+        }
+    }
+}
+
+@media(min-width: 1200px) {}
