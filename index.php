@@ -3,25 +3,25 @@
 require __DIR__ . "/config.php";
 
 $menuHeader = [
-    (object)[
+    (object) [
         "text" => "Início",
         "url" => URL_BASE,
         "target" => "_self",
         "title" => "Página inicial"
     ],
-    (object)[
+    (object) [
         "text" => "Cortes e preços",
         "url" => URL_BASE . "#services",
         "target" => "_self",
         "title" => "Cortes e preços"
     ],
-    (object)[
+    (object) [
         "text" => "Área do cliente",
         "url" => URL_BASE . "?action=login",
         "target" => "_self",
         "title" => "Acessar área do cliente"
     ],
-    (object)[
+    (object) [
         "text" => "Example #1",
         "url" => "https://google.com.br",
         "target" => "_blank",
@@ -193,7 +193,8 @@ $socials = [
                 </div>
             </div>
 
-            <div class="row justify-content-center pb-4" data-aos="zoom-out" data-aos-duration="1000">
+            <div class="row justify-content-center pb-4" data-aos="zoom-out"
+                data-aos-duration="1000">
                 <div class="col-12 col-lg-10">
                     <div class="row justify-content-center services-list">
                         <?php foreach ($services as $key => $service): ?>
@@ -225,10 +226,12 @@ $socials = [
             </div>
 
             <div class="text-center">
-                <a href="" class="btn btn-outline-primary" data-aos="fade-up" data-aos-duration="750">
+                <a href="" class="btn btn-outline-primary" data-aos="fade-up"
+                    data-aos-duration="750">
                     Sou cliente
                 </a>
-                <a href="" class="btn btn-primary" data-aos="fade-up" data-aos-delay="275" data-aos-duration="750">
+                <a href="" class="btn btn-primary" data-aos="fade-up" data-aos-delay="275"
+                    data-aos-duration="750">
                     Agendamento horário
                 </a>
             </div>
@@ -346,7 +349,8 @@ $socials = [
                 </div>
             </div>
 
-            <div class="row justify-content-center" data-aos="fade-up" data-aos-duration="750">
+            <div class="row justify-content-center" data-aos="fade-up"
+                data-aos-duration="750">
                 <div class="col-12 col-md-10 col-lg-8">
                     <div class="splide" id="photos-galery">
                         <div class="splide__track">
@@ -396,7 +400,8 @@ $socials = [
                     class="col-12 col-lg-6 col-xl-5 d-flex flex-column align-items-center justify-content-center">
                     <div>
                         <!-- address -->
-                        <div class="d-flex align-items-center mb-3" data-aos="zoom-in-right">
+                        <div class="d-flex align-items-center mb-3"
+                            data-aos="zoom-in-right">
                             <div class="icon">
                                 <svg width="45" height="45" viewBox="0 0 45 45"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -413,7 +418,8 @@ $socials = [
                         </div>
 
                         <!-- phone number -->
-                        <div class="d-flex align-items-center mb-3" data-aos="zoom-in-right" data-aos-delay="125">
+                        <div class="d-flex align-items-center mb-3"
+                            data-aos="zoom-in-right" data-aos-delay="125">
                             <div class="icon">
                                 <svg width="45" height="45" viewBox="0 0 45 45"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -431,7 +437,8 @@ $socials = [
                         </div>
 
                         <!-- email -->
-                        <div class="d-flex align-items-center mb-3" data-aos="zoom-in-right" data-aos-delay="200">
+                        <div class="d-flex align-items-center mb-3"
+                            data-aos="zoom-in-right" data-aos-delay="200">
                             <div class="icon">
                                 <svg width="45" height="45" viewBox="0 0 45 45"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -446,7 +453,8 @@ $socials = [
                         </div>
 
                         <!-- whatsapp -->
-                        <div class="d-flex align-items-center mb-3" data-aos="zoom-in-right" data-aos-delay="275">
+                        <div class="d-flex align-items-center mb-3"
+                            data-aos="zoom-in-right" data-aos-delay="275">
                             <div class="icon">
                                 <svg width="45" height="45" viewBox="0 0 45 45"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -462,7 +470,8 @@ $socials = [
                     </div>
                 </div>
 
-                <div class="col-12 col-lg-6 col-xl-7 py-3" data-aos="zoom-in-left" data-aos-duration="750">
+                <div class="col-12 col-lg-6 col-xl-7 py-3" data-aos="zoom-in-left"
+                    data-aos-duration="750">
                     <div class="map-area">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!4v1667673971501!6m8!1m7!1sh9fsIkFmlutDRUO13dLp9Q!2m2!1d25.19846403102348!2d55.27243301486146!3f133.59694635865472!4f39.71106924254599!5f0.7820865974627469"
@@ -494,7 +503,7 @@ $socials = [
                     <div class="col-12 col-sm-6 col-md-3 mb-4 mb-sm-0">
                         <h4>MENU</h4>
                         <nav class="nav flex-column footer-menu">
-                            <?php foreach($menuFooter as $menuF): ?>
+                            <?php foreach ($menuFooter as $menuF): ?>
                             <a class="nav-link" href="<?= $menuF->url ?>"
                                 target="<?= $menuF->target ?>"
                                 title="<?= $menuF->title ?>">
@@ -574,4 +583,5 @@ $socials = [
     <script src="./assets/js/scripts.min.js"></script>
 
 </body>
+
 </html>
