@@ -10824,6 +10824,27 @@ body .btn-outline-primary:hover,
 body .btn-outline-primary-dark:hover {
   color: #ebebeb;
 }
+body .modal .modal-dialog .modal-content {
+  background-color: #131313;
+}
+body .modal .modal-dialog .modal-content .modal-header .btn-close {
+  background: unset;
+  color: #EBEBEB !important;
+  position: relative;
+}
+body .modal .modal-dialog .modal-content .modal-header .btn-close::before, body .modal .modal-dialog .modal-content .modal-header .btn-close::after {
+  content: "";
+  width: 80%;
+  height: 3px;
+  background-color: #EBEBEB;
+  position: absolute;
+  top: 14px;
+  left: 2px;
+  transform: rotateZ(45deg);
+}
+body .modal .modal-dialog .modal-content .modal-header .btn-close::after {
+  transform: rotateZ(-45deg);
+}
 
 .header-bg {
   background-image: url(./../../assets/img/header-bg.png);
