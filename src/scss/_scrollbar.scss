@@ -1,20 +1,17 @@
 /* Works on Firefox */
-* {
+html {
     scrollbar-width: thin;
-    scrollbar-color: $primary $light-dark;
+    scrollbar-color: rgb($primary, .75) $dark;
 }
 
 /* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 6px;
+    background-color: $dark;
 }
 
-*::-webkit-scrollbar-track {
-    background: $light-dark;
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: $primary;
+::-webkit-scrollbar-thumb {
+    background-color: rgb($primary, .75) !important;
     border-radius: 20px;
-    border: 3px solid $light-dark;
+    border: 3px solid rgb($primary, .75);
 }

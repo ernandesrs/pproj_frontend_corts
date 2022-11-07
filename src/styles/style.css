@@ -10732,24 +10732,21 @@ textarea.form-control-lg {
   }
 }
 /* Works on Firefox */
-* {
+html {
   scrollbar-width: thin;
-  scrollbar-color: #A78B28 #BDBDBD;
+  scrollbar-color: rgba(167, 139, 40, 0.75) #222222;
 }
 
 /* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 6px;
+  background-color: #222222;
 }
 
-*::-webkit-scrollbar-track {
-  background: #BDBDBD;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #A78B28;
+::-webkit-scrollbar-thumb {
+  background-color: rgba(167, 139, 40, 0.75) !important;
   border-radius: 20px;
-  border: 3px solid #BDBDBD;
+  border: 3px solid rgba(167, 139, 40, 0.75);
 }
 
 body {
