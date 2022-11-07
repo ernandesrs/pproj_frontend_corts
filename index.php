@@ -17,7 +17,7 @@ $menuHeader = [
     ],
     (object) [
         "text" => "Área do cliente",
-        "url" => URL_BASE . "?action=login",
+        "url" => "account.php?action=login",
         "target" => "_self",
         "title" => "Acessar área do cliente"
     ],
@@ -227,9 +227,8 @@ $socials = (object) [
             </div>
 
             <div class="text-center">
-                <a href="<?= URL_BASE . "/action=login" ?>"
-                    class="btn btn-outline-primary" data-aos="fade-up"
-                    data-aos-duration="750">
+                <a href="account.php?action=login" class="btn btn-outline-primary"
+                    data-aos="fade-up" data-aos-duration="750">
                     Sou cliente
                 </a>
                 <a href="#schedule" class="btn btn-primary" data-aos="fade-up"
@@ -259,11 +258,11 @@ $socials = (object) [
                             </p>
                             <div class="d-flex flex-column">
                                 <a class="btn btn-primary mb-2"
-                                    href="client.php?action=login">
+                                    href="account.php?action=login">
                                     Fazer login
                                 </a>
                                 <a class="btn btn-outline-primary"
-                                    href="client.php?action=register">
+                                    href="account.php?action=register">
                                     Iniciar um cadastrado grátis
                                 </a>
                             </div>
@@ -342,7 +341,8 @@ $socials = (object) [
     <section class="section album">
         <div class="container">
             <div class="row justify-content-center pb-4">
-                <div class="col-12 col-md-10 col-lg-8 d-flex justify-content-center align-items-center flex-column flex-md-row mb-4">
+                <div
+                    class="col-12 col-md-10 col-lg-8 d-flex justify-content-center align-items-center flex-column flex-md-row mb-4">
                     <div class="me-md-auto text-center text-md-start mb-2">
                         <h1 data-aos="zoom-in-up">
                             Galeria
@@ -352,8 +352,10 @@ $socials = (object) [
                         </p>
                     </div>
                     <?php if ($socials->instagram ?? null): ?>
-                    <div class="d-flex flex-column align-items-center align-items-md-start">
-                        <span class="small d-block mb-1">Siga-nos no <?= $socials->instagram->name ?></span>
+                    <div
+                        class="d-flex flex-column align-items-center align-items-md-start">
+                        <span class="small d-block mb-1">Siga-nos no <?=
+                            $socials->instagram->name ?></span>
                         <a href="<?= $socials->instagram->url ?>"
                             title="Siga-nos no <?= $socials->instagram->name ?> para ver mais"
                             target="_blank">
