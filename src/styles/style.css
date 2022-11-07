@@ -10842,6 +10842,31 @@ body .modal .modal-dialog .modal-content .modal-header .btn-close::before, body 
 body .modal .modal-dialog .modal-content .modal-header .btn-close::after {
   transform: rotateZ(-45deg);
 }
+body.account-body {
+  background-image: url(./../../assets/img/account-body-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+body.account-body .container {
+  display: flex;
+  justify-content: center;
+}
+body.account-body .inner-box {
+  width: 100%;
+  max-width: 720px;
+}
+body.account-body .inner-box .inner-box-header .logo img {
+  height: 45px;
+}
+body.account-body .inner-box .inner-box-content {
+  background-color: rgba(34, 34, 34, 0.75);
+  width: 100%;
+  min-height: 475px;
+  border-radius: 0.5rem;
+}
 
 .header-bg {
   background-image: url(./../../assets/img/header-bg.png);

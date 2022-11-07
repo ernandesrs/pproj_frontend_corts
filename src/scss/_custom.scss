@@ -118,6 +118,40 @@ body {
             }
         }
     }
+
+    &.account-body {
+        background-image: url(./../../assets/img/account-body-bg.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .inner-box {
+            width: 100%;
+            max-width: 720px;
+
+            .inner-box-header {
+                .logo {
+                    img {
+                        height: 45px;
+                    }
+                }
+            }
+
+            .inner-box-content {
+                background-color: rgb($dark, .75);
+                width: 100%;
+                min-height: 475px;
+                border-radius: $border-radius-lg;
+            }
+        }
+    }
 }
 
 .header-bg {
