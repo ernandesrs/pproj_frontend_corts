@@ -18,6 +18,13 @@ $menuHeader = [
         "activeIn" => ["schedules"]
     ],
     (object) [
+        "text" => "Novo agendamento",
+        "url" => URL_BASE . "/client.php?action=new-schedule",
+        "target" => "_self",
+        "title" => "Novo agendamento",
+        "activeIn" => ["new-schedule"]
+    ],
+    (object) [
         "text" => "Perfil",
         "url" => URL_BASE . "/client.php?action=profile",
         "target" => "_self",
