@@ -8,21 +8,21 @@ $menuHeader = [
         "url" => URL_BASE . "/client.php?action=dash",
         "target" => "_self",
         "title" => "Resumo geral",
-        "activeIn"=>["dash"]
+        "activeIn" => ["dash"]
     ],
     (object) [
         "text" => "Agendamentos",
         "url" => URL_BASE . "/client.php?action=schedules",
         "target" => "_self",
         "title" => "Meus agendamentos",
-        "activeIn"=>["schedules"]
+        "activeIn" => ["schedules"]
     ],
     (object) [
         "text" => "Perfil",
         "url" => URL_BASE . "/client.php?action=profile",
         "target" => "_self",
         "title" => "Meu perfil",
-        "activeIn"=>["profile"]
+        "activeIn" => ["profile"]
     ],
 ];
 
@@ -81,8 +81,7 @@ $views = (object) [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corts - <?= $views->$action->title ?>
-    </title>
+    <title>Corts - <?= $views->$action->title ?></title>
 
     <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/boxicons.min.css">
@@ -119,11 +118,10 @@ $views = (object) [
         <div class="container">
             <div class="pb-3">
                 <p class="h3 mb-0">
-                <i class='bx bxs-dashboard'></i>
-                <span class="ms-2">
-                    <?= $views->$action->title . ($action == "dash" ? " - Bem vindo Cliente!" :
-                        "") ?>
-                        </span>
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="ms-2">
+                        <?= $views->$action->title . ($action == "dash" ? " - Bem vindo Cliente!" : "") ?>
+                    </span>
                 </p>
             </div>
             <div class="main-content">
@@ -139,18 +137,15 @@ $views = (object) [
                             <h4>Dashboard</h4>
                             <hr>
                             <nav class="nav flex-column">
-                                <?php foreach ($menuHeader as $menuH): ?>
-                                <a class="nav-link <?= in_array($action, $menuH->activeIn) ?"active":"" ?>" href="<?= $menuH->url ?>"
-                                    target="<?= $menuH->target ?>"
-                                    title="<?= $menuH->title ?>">
-                                    <?= $menuH->text ?>
-                                </a>
+                                <?php foreach ($menuHeader as $menuH) : ?>
+                                    <a class="nav-link <?= in_array($action, $menuH->activeIn) ? "active" : "" ?>" href="<?= $menuH->url ?>" target="<?= $menuH->target ?>" title="<?= $menuH->title ?>">
+                                        <?= $menuH->text ?>
+                                    </a>
                                 <?php endforeach; ?>
                                 <a href="" class="nav-link">
                                     Sair
                                 </a>
-                                <a href="<?= URL_BASE . "/client.php?action=new-schedule" ?>"
-                                    class="nav-link btn btn-outline-primary mt-5">
+                                <a href="<?= URL_BASE . "/client.php?action=new-schedule" ?>" class="nav-link btn btn-outline-primary mt-5">
                                     Novo agendamento
                                 </a>
                             </nav>
@@ -167,9 +162,7 @@ $views = (object) [
                 <div class="text-center mt-auto">
                     <small>
                         <p class="mb-0">
-                            Todos os direitos reservados - By <a
-                                href="https://github.com/ernandesrs" title="Github"
-                                target="_blank">Ernandes</a>
+                            Todos os direitos reservados - By <a href="https://github.com/ernandesrs" title="Github" target="_blank">Ernandes</a>
                         </p>
                         <p class="mb-0">
                             <a href="">
