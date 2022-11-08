@@ -114,7 +114,7 @@ $views = (object) [
 
     <main class="main">
         <div class="container">
-            <div class="container pb-3">
+            <div class="pb-3">
                 <p class="h3 mb-0">
                 <i class='bx bxs-dashboard'></i>
                 <span class="ms-2">

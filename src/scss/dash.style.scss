@@ -4,12 +4,14 @@
 
 @import "./dash/variables";
 
-@import "./../../node_modules//bootstrap/scss/bootstrap.scss";
+@import "./../../node_modules/bootstrap/scss/bootstrap.scss";
 
 @import "./scrollbar";
 
 @import "./common";
 
 @import "./dash/custom";
+
+@import "./common_responsive";
 
 @import "./dash/responsive";

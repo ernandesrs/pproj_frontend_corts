@@ -34,7 +34,7 @@ $jsMinifyDash->minify(__DIR__ . "/../assets/js/dash.scripts.min.js");
 $cssbase = __DIR__ . "/styles";
 $cssMinifyFront = new Minify\CSS();
 
-$cssMinifyFront->add($cssbase . "/style.css");
+$cssMinifyFront->add($cssbase . "/front.style.css");
 $cssMinifyFront->add(__DIR__ . "/../node_modules/@splidejs/splide/dist/css/splide.min.css");
 
 $cssMinifyFront->minify(__DIR__ . "/../assets/css/styles.min.css");

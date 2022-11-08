@@ -10892,6 +10892,51 @@ body.client-dash-body .main {
   padding: 1.5rem 0 !important;
 }
 
+@media (min-width: 576px) {
+  body h1,
+body .h1 {
+    font-size: 1.75rem;
+  }
+  body h2,
+body .h2 {
+    font-size: 1.55rem;
+  }
+  body h3,
+body .h3 {
+    font-size: 1.35rem;
+  }
+}
+@media (min-width: 768px) {
+  body h1,
+body .h1 {
+    font-size: 2rem;
+  }
+  body h2,
+body .h2 {
+    font-size: 1.75rem;
+  }
+  body h3,
+body .h3 {
+    font-size: 1.45rem;
+  }
+}
+@media (min-width: 992px) {
+  body h1,
+body .h1 {
+    font-size: 2.5rem;
+  }
+  body h2,
+body .h2 {
+    font-size: 2rem;
+  }
+  body h3,
+body .h3 {
+    font-size: 1.5rem;
+  }
+  .header .logo img {
+    height: unset;
+  }
+}
 @media (min-width: 992px) {
   .header .sidebar-toggler {
     display: none;
