@@ -10827,8 +10827,16 @@ body.account-body .icon-check::before {
   margin: 0.25rem;
 }
 
-body.client-dash-body .main {
-  min-height: calc(100vh - 14.375rem);
+body .text-danger {
+  color: #dc3545;
+}
+body .btn-outline-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+body .btn-outline-danger:hover {
+  background-color: rgba(220, 53, 69, 0.75);
+  color: #EBEBEB;
 }
 
 .header .sidebar-toggler {
@@ -10858,13 +10866,38 @@ body.client-dash-body .main {
   pointer-events: none;
 }
 
+.main {
+  min-height: calc(100vh - 14.375rem);
+}
 .main .main-content {
   background-color: rgba(34, 34, 34, 0.75);
   padding: 1.5rem 1rem;
 }
 .main .main-content .content {
   background-color: transparent;
-  border: 1px solid rgba(235, 235, 235, 0.125) !important;
+}
+.main .main-content .content .custom-card {
+  background-color: transparent;
+  padding: 1.5rem 2rem;
+}
+.main .main-content .content .custom-card.custom-card-scheduled {
+  background: linear-gradient(to bottom, rgba(25, 135, 84, 0.125), rgba(25, 135, 84, 0.05));
+}
+.main .main-content .content .schedules-list tbody > tr .status {
+  color: #198754;
+}
+.main .main-content .content .schedules-list tbody > tr.canceled {
+  text-decoration: line-through;
+  color: #dc3545;
+}
+.main .main-content .content .schedules-list tbody > tr.canceled .status {
+  color: #dc3545;
+}
+.main .main-content .content .schedules-list tbody > tr.scheduled {
+  color: #0dcaf0;
+}
+.main .main-content .content .schedules-list tbody > tr.scheduled .status {
+  color: #0dcaf0;
 }
 .main .main-content .sidebar {
   background-color: rgba(19, 19, 19, 0.95);

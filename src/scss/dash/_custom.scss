@@ -1,7 +1,15 @@
 body {
-    &.client-dash-body {
-        .main {
-            min-height: calc(100vh - ($header-height + $footer-height));
+    .text-danger {
+        color: $danger;
+    }
+
+    .btn-outline-danger {
+        border-color: $danger;
+        color: $danger;
+
+        &:hover {
+            background-color: rgb($danger, .75);
+            color: $light;
         }
     }
 }
@@ -42,13 +50,51 @@ body {
 }
 
 .main {
+    min-height: calc(100vh - ($header-height + $footer-height));
+
     .main-content {
         background-color: rgb($dark, .75);
         padding: $spacer * 1.5 $spacer;
 
         .content {
             background-color: transparent;
-            border: 1px solid rgb($light, 0.125) !important;
+            
+            .custom-card {
+                background-color: transparent;
+                padding: $spacer * 1.5 $spacer * 2;
+
+                &.custom-card-scheduled {
+                    background: linear-gradient(to bottom, rgb($success, 0.125), rgb($success, 0.05));
+                }
+            }
+
+            .schedules-list {
+
+                tbody>tr {
+
+                    .status {
+                        color: $success;
+                    }
+
+                    &.canceled {
+                        text-decoration: line-through;
+                        color: $danger;
+
+                        .status {
+                            color: $danger;
+                        }
+                    }
+
+                    &.scheduled {
+                        color: $info;
+
+                        .status {
+                            color: $info;
+                        }
+                    }
+                }
+
+            }
         }
 
         .sidebar {

@@ -88,7 +88,7 @@ $views = (object) [
     <link rel="stylesheet" href="./assets/css/dash.styles.min.css">
 </head>
 
-<body class="client-dash-body">
+<body>
     <div class="header-bg"></div>
 
     <header class="header">
@@ -127,7 +127,7 @@ $views = (object) [
             <div class="main-content">
                 <div class="row">
                     <div class="col-12 col-lg-8">
-                        <div class="card card-body bg-trasparent content">
+                        <div class="card card-body content">
                             <?php include __DIR__ . "/src/views/dash/" . $action . ".php" ?>
                         </div>
                     </div>
@@ -144,9 +144,6 @@ $views = (object) [
                                 <?php endforeach; ?>
                                 <a href="" class="nav-link">
                                     Sair
-                                </a>
-                                <a href="<?= URL_BASE . "/client.php?action=new-schedule" ?>" class="nav-link btn btn-outline-primary mt-5">
-                                    Novo agendamento
                                 </a>
                             </nav>
                         </div>
