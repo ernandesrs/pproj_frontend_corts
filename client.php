@@ -7,19 +7,22 @@ $menuHeader = [
         "text" => "Dashboard",
         "url" => URL_BASE . "/client.php?action=dash",
         "target" => "_self",
-        "title" => "Resumo geral"
+        "title" => "Resumo geral",
+        "activeIn"=>["dash"]
     ],
     (object) [
         "text" => "Agendamentos",
         "url" => URL_BASE . "/client.php?action=schedules",
         "target" => "_self",
-        "title" => "Meus agendamentos"
+        "title" => "Meus agendamentos",
+        "activeIn"=>["schedules"]
     ],
     (object) [
         "text" => "Perfil",
         "url" => URL_BASE . "/client.php?action=profile",
         "target" => "_self",
-        "title" => "Meu perfil"
+        "title" => "Meu perfil",
+        "activeIn"=>["profile"]
     ],
 ];
 
@@ -137,7 +140,7 @@ $views = (object) [
                             <hr>
                             <nav class="nav flex-column">
                                 <?php foreach ($menuHeader as $menuH): ?>
-                                <a class="nav-link" href="<?= $menuH->url ?>"
+                                <a class="nav-link <?= in_array($action, $menuH->activeIn) ?"active":"" ?>" href="<?= $menuH->url ?>"
                                     target="<?= $menuH->target ?>"
                                     title="<?= $menuH->title ?>">
                                     <?= $menuH->text ?>

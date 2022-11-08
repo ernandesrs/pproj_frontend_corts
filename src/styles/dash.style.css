@@ -10887,6 +10887,26 @@ body.client-dash-body .main {
   transition-timing-function: ease-in-out;
   opacity: 1;
 }
+.main .main-content .sidebar .nav .nav-link {
+  position: relative;
+  margin-bottom: 1px;
+  overflow-x: hidden;
+}
+.main .main-content .sidebar .nav .nav-link::before {
+  content: "";
+  background-color: #A78B28;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(50%) translateX(-130%) rotateZ(45deg);
+  transition: 0.25s ease-in-out;
+}
+.main .main-content .sidebar .nav .nav-link:hover::before, .main .main-content .sidebar .nav .nav-link.active::before {
+  transform: translateY(50%) translateX(-90%) rotateZ(45deg);
+  transition: 0.25s ease-in-out;
+}
 
 .footer {
   padding: 1.5rem 0 !important;
