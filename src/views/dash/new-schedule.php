@@ -2,8 +2,8 @@
     <input type="hidden" name="appointment_id">
     <input type="hidden" name="payment_method">
 
-    <div class="bkdrop jsBackdrop w-100 h-100 d-flex flex-column justify-content-center align-items-center py-5 position-absolute opacity-25 d-none"
-        style="background: rgba(0, 0, 0, 0.98); z-index:10;">
+    <div
+        class="bkdrop jsBackdrop w-100 h-100 d-flex flex-column justify-content-center align-items-center py-5 position-absolute d-none">
         <div class="d-flex flex-column justify-content-center align-items-center py-5">
             <div class="spinner-border text-light" role="status">
                 <span class="visually-hidden">Loading...</span>
@@ -12,18 +12,18 @@
         </div>
     </div>
 
-    <ul class="nav nav-pills mb-3" id="pills-tab">
+    <ul class="nav nav-pills justify-content-center mb-3" id="pills-tab">
         <li class="nav-item">
             <button class="nav-link active" id="step1-tab" data-bs-toggle="pill"
-                data-bs-target="#step1" type="button" disabled>1</button>
+                data-bs-target="#step1" type="button" disabled>Passo 1</button>
         </li>
         <li class="nav-item">
             <button class="nav-link" id="step2-tab" data-bs-toggle="pill"
-                data-bs-target="#step2" type="button" disabled>2</button>
+                data-bs-target="#step2" type="button" disabled>Passo 2</button>
         </li>
         <li class="nav-item">
             <button class="nav-link" id="step3-tab" data-bs-toggle="pill"
-                data-bs-target="#step3" type="button" disabled>3</button>
+                data-bs-target="#step3" type="button" disabled>Passo 3</button>
         </li>
     </ul>
 
@@ -145,14 +145,17 @@
 
     <div class="d-flex pt-4">
         <button class="btn btn-outline-primary d-none" type="button" id="jsPreviowStep">
-            <- Voltar </button>
-                <button class="btn btn-primary ms-auto" type="button" id="jsNextStep">
-                    Continuar ->
-                </button>
-                <button class="btn btn-primary ms-auto d-none" type="submit"
-                    id="jsFinalStep">
-                    Finalizar ->
-                </button>
+            <i class='bx bx-left-arrow-alt'></i> <span>Voltar</span>
+        </button>
+        <button class="btn btn-outline-danger d-none" type="button" id="jsCancelStep">
+            <i class='bx bx-x'></i> <span>Cancelar</span>
+        </button>
+        <button class="btn btn-primary ms-auto" type="button" id="jsNextStep">
+            <span>Continuar</span> <i class='bx bx-right-arrow-alt'></i>
+        </button>
+        <button class="btn btn-primary ms-auto d-none" type="submit" id="jsFinalStep">
+            <i class='bx bx-check'></i> <span>Finalizar</span>
+        </button>
     </div>
 
 </form>

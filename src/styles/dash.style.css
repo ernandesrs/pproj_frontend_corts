@@ -10838,6 +10838,10 @@ body .btn-outline-danger:hover {
   background-color: rgba(220, 53, 69, 0.75);
   color: #EBEBEB;
 }
+body .bkdrop {
+  background-color: #222222;
+  z-index: 10;
+}
 
 .header .sidebar-toggler {
   background: transparent;

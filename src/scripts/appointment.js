@@ -19,6 +19,7 @@ class Appointment {
         };
         this.buttonNextStep = this.appointmentForm.querySelector("#jsNextStep");
         this.buttonPreviowStep = this.appointmentForm.querySelector("#jsPreviowStep");
+        this.buttonCancelStep = this.appointmentForm.querySelector("#jsCancelStep");
         this.buttonFinalStep = this.appointmentForm.querySelector("#jsFinalStep");
         this.buttonFinalStep.disabled = true;
         this.appointmentPaymentMethodInput = this.appointmentForm.querySelector("#pay_method");
@@ -71,6 +72,15 @@ class Appointment {
         });
 
         /**
+         * Monitora clique no botão de cancelar
+         */
+        this.buttonCancelStep.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            this.cancelAppointment();
+        });
+
+        /**
          * Monitora submissão do formulário
          */
         this.appointmentForm.addEventListener("submit", (event) => {
@@ -111,11 +121,15 @@ class Appointment {
         }
 
         if (this.appointmentSteps.current == 3) {
+            this.buttonCancelStep.classList.remove("d-none");
             this.buttonFinalStep.classList.remove("d-none");
             this.buttonNextStep.classList.add("d-none");
+            this.buttonPreviowStep.classList.add("d-none");
         } else {
+            this.buttonCancelStep.classList.add("d-none");
             this.buttonFinalStep.classList.add("d-none");
             this.buttonNextStep.classList.remove("d-none");
+            this.buttonPreviowStep.classList.remove("d-none");
         }
 
         (new bootstrap.Tab(currentBsTab)).show();
@@ -218,5 +232,17 @@ class Appointment {
         let data = new FormData(event.target);
 
         console.log("Finalizar", data.get("appointment_id"), data.get("payment_method"));
+    }
+
+    /**
+     * Cancelamento de agendamento: tomar os devido processos(exclusão do agendamento do servidor, etc)
+     * @returns 
+     */
+    cancelAppointment() {
+        let appointmentId = this.appointmentForm.querySelector("[name=appointment_id]").value;
+
+        if (!window.confirm("O cancelamento não pode ser desfeito, continuar?")) return;
+
+        console.log("Cancelar agendamento: ", appointmentId);
     }
 }

@@ -12,6 +12,11 @@ body {
             color: $light;
         }
     }
+
+    .bkdrop {
+        background-color: $dark;
+        z-index: 10;
+    }
 }
 
 .header {
@@ -58,7 +63,7 @@ body {
 
         .content {
             background-color: transparent;
-            
+
             .custom-card {
                 background-color: transparent;
                 padding: $spacer * 1.5 $spacer * 2;
