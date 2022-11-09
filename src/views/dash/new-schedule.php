@@ -1,4 +1,4 @@
-<form id="jsNewSchedule" action="">
+<form id="jsNewSchedule" action="" data-action-step2="" data-action-cancel="" data-action-submit="">
     <input type="hidden" name="appointment_id">
     <input type="hidden" name="payment_method">
 

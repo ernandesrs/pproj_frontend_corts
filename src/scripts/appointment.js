@@ -209,12 +209,13 @@ class Appointment {
      */
     processData() {
         let bkdrop = this.appointmentForm.querySelector(".jsBackdrop");
+        let urlAction = this.appointmentForm.getAttribute("data-action-step2");
 
         bkdrop.classList.remove("d-none");
 
         // apenas para simular envio e processamento
         setTimeout(() => {
-            console.log(this.appointmentData);
+            console.log("Passo 2, processar dados em: " + urlAction, this.appointmentData);
 
             this.appointmentForm.querySelector("[name=appointment_id]").value = 12902;
 
@@ -230,8 +231,9 @@ class Appointment {
      */
     submitForm(event) {
         let data = new FormData(event.target);
+        let urlAction = this.appointmentForm.getAttribute("data-action-submit");
 
-        console.log("Finalizar", data.get("appointment_id"), data.get("payment_method"));
+        console.log("Finalizar, enviar dados para: " + urlAction, data.get("appointment_id"), data.get("payment_method"));
     }
 
     /**
@@ -240,9 +242,10 @@ class Appointment {
      */
     cancelAppointment() {
         let appointmentId = this.appointmentForm.querySelector("[name=appointment_id]").value;
+        let urlAction = this.appointmentForm.getAttribute("data-action-cancel");
 
         if (!window.confirm("O cancelamento não pode ser desfeito, continuar?")) return;
 
-        console.log("Cancelar agendamento: ", appointmentId);
+        console.log("Cancelar agendamento em: " + urlAction, appointmentId);
     }
 }
