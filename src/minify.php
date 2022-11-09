@@ -23,7 +23,7 @@ $jsbase = __DIR__ . "/scripts";
 $jsMinifyDash = new Minify\JS();
 
 $jsMinifyDash->add($jsbase . "/cheader.js");
-$jsMinifyDash->add($jsbase . "/schedule.js");
+$jsMinifyDash->add($jsbase . "/appointment.js");
 $jsMinifyDash->add($jsbase . "/dash.script.js");
 $jsMinifyDash->add(__DIR__ . "/../node_modules/bootstrap/dist/js/bootstrap.min.js");
 

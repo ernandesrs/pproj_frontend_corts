@@ -2,4 +2,4 @@
 (new CHeader(".sidebar-toggler", ".sidebar")).init();
 
 // schedule
-(new Schedule("#jsNewSchedule")).init();
+(new Appointment("#jsNewSchedule")).init();
