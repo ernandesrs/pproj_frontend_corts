@@ -21,8 +21,12 @@ class Appointment {
         this.buttonPreviowStep = this.appointmentForm.querySelector("#jsPreviowStep");
         this.buttonFinalStep = this.appointmentForm.querySelector("#jsFinalStep");
         this.buttonFinalStep.disabled = true;
+        this.appointmentPaymentMethodInput = this.appointmentForm.querySelector("#pay_method");
     }
 
+    /**
+     * Inicia monitoramentos
+     */
     init() {
         if (!this.appointmentForm) return;
 
@@ -67,15 +71,33 @@ class Appointment {
         });
 
         /**
-         * Monitora clique no botão de finalizar
+         * Monitora submissão do formulário
          */
-        this.buttonFinalStep.addEventListener("click", (event) => {
+        this.appointmentForm.addEventListener("submit", (event) => {
             event.preventDefault();
 
-            console.log("Finalizar");
+            this.submitForm(event);
+        });
+
+        /**
+         * Monitorara alterações no modo de pagamento
+         */
+        this.appointmentPaymentMethodInput.addEventListener("change", (event) => {
+            let value = event.target.value;
+
+            this.buttonFinalStep.disabled = true;
+            switch (value) {
+                case "local":
+                    this.buttonFinalStep.disabled = false;
+                    this.appointmentForm.querySelector("[name=payment_method]").value = value;
+                    break;
+            }
         });
     }
 
+    /**
+     * Atualizar as guias e seus elementos de acordo com o passo atual/anterior
+     */
     changeAppointmentStepsTab() {
         let oldBsTab = this.appointmentForm.querySelector(`#step${this.appointmentSteps.old}-tab`);
         let currentBsTab = this.appointmentForm.querySelector(`#step${this.appointmentSteps.current}-tab`);
@@ -101,6 +123,9 @@ class Appointment {
         this.setContent();
     }
 
+    /**
+     * Alterar o conteúdo das guias de acordo com passo atual/anterior
+     */
     setContent() {
         switch (this.appointmentSteps.current) {
             case 1:
@@ -116,12 +141,19 @@ class Appointment {
         }
     }
 
+    /**
+     * Limpa a lista de agendamentos
+     */
     clearAppointmentList() {
         this.appointmentList.innerHTML = "";
         this.appointmentData.appointmentAmount = 1;
         this.appointmentData.list = [];
     }
 
+    /**
+     * Atualiza a lista de agendamentos de acordo com a quantidade
+     * de agendamentos escolhido
+     */
     updateAppointmentList() {
         for (let i = 0; i < this.appointmentAmount.current; i++) {
             let clone = this.appointmentForm.querySelector(".model .schedule-list-item").cloneNode(true);
@@ -140,6 +172,10 @@ class Appointment {
         }
     }
 
+    /**
+     * Obtém os dados relacionados aos agendamentos e os adiciona
+     * no objeto de dados(appointmentData)
+     */
     getAllData() {
         this.appointmentData.list.forEach((item) => {
             let inputArea = this.appointmentForm.querySelector("#" + item.id);
@@ -150,6 +186,37 @@ class Appointment {
             item.service = inputArea.querySelector(".jsServicesList")?.value;
         })
 
-        console.log(this.appointmentData);
+        this.processData();
+    }
+
+    /**
+     * Fazer aqui o processamento dos dados, como enviar ao servidor, validar, salvar informação dos agendamentos, calcular preços finais
+     * para então mostrar formas de pagamentos
+     */
+    processData() {
+        let bkdrop = this.appointmentForm.querySelector(".jsBackdrop");
+
+        bkdrop.classList.remove("d-none");
+
+        // apenas para simular envio e processamento
+        setTimeout(() => {
+            console.log(this.appointmentData);
+
+            this.appointmentForm.querySelector("[name=appointment_id]").value = 12902;
+
+            bkdrop.classList.add("d-none");
+        }, 2000);
+    }
+
+    /**
+     * Aqui finalmente as informações finais serão enviadas ao servidor,
+     * como o id do agendamento e forma de pagamento.
+     * 
+     * @param {*} event 
+     */
+    submitForm(event) {
+        let data = new FormData(event.target);
+
+        console.log("Finalizar", data.get("appointment_id"), data.get("payment_method"));
     }
 }
