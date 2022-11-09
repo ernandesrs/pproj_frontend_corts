@@ -19,6 +19,8 @@ class Appointment {
         };
         this.buttonNextStep = this.appointmentForm.querySelector("#jsNextStep");
         this.buttonPreviowStep = this.appointmentForm.querySelector("#jsPreviowStep");
+        this.buttonFinalStep = this.appointmentForm.querySelector("#jsFinalStep");
+        this.buttonFinalStep.disabled = true;
     }
 
     init() {
@@ -63,6 +65,15 @@ class Appointment {
 
             this.changeAppointmentStepsTab();
         });
+
+        /**
+         * Monitora clique no botão de finalizar
+         */
+        this.buttonFinalStep.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            console.log("Finalizar");
+        });
     }
 
     changeAppointmentStepsTab() {
@@ -75,6 +86,14 @@ class Appointment {
             this.buttonPreviowStep.classList.remove("d-none");
         } else {
             this.buttonPreviowStep.classList.add("d-none");
+        }
+
+        if (this.appointmentSteps.current == 3) {
+            this.buttonFinalStep.classList.remove("d-none");
+            this.buttonNextStep.classList.add("d-none");
+        } else {
+            this.buttonFinalStep.classList.add("d-none");
+            this.buttonNextStep.classList.remove("d-none");
         }
 
         (new bootstrap.Tab(currentBsTab)).show();
@@ -131,6 +150,6 @@ class Appointment {
             item.service = inputArea.querySelector(".jsServicesList")?.value;
         })
 
-        this.appointmentForm.querySelector(".jsShowData").value = JSON.stringify(this.appointmentData, null, 5);
+        console.log(this.appointmentData);
     }
 }

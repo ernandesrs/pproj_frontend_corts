@@ -80,9 +80,17 @@
         <div class="tab-pane fade" id="step3">
             <div class="row pt-3">
                 <div class="col-12">
-                    <p>Capturar dados, enviar ao servidor, validar, salvar, listar dados e
-                        iniciar processo de pagamento.</p>
-                    <textarea class="form-control jsShowData" rows="20"></textarea>
+                    Serviços
+                    <div class="card card-body bg-transparent">
+                        OPA
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    Pagamento
+                    <div class="card card-body bg-transparent">
+                        OPA
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,10 +99,14 @@
     <hr>
     <div class="d-flex">
         <button class="btn btn-outline-primary d-none" type="button" id="jsPreviowStep">
-            <- Voltar </button>
-                <button class="btn btn-primary ms-auto" type="button" id="jsNextStep">
-                    Continuar ->
-                </button>
+            <- Voltar
+        </button>
+        <button class="btn btn-primary ms-auto" type="button" id="jsNextStep">
+            Continuar ->
+        </button>
+        <button class="btn btn-primary ms-auto d-none" type="button" id="jsFinalStep">
+            Finalizar ->
+        </button>
     </div>
 
 </form>
